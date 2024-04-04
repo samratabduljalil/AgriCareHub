@@ -1,8 +1,17 @@
 function Navbar (){
 
-return <><h1>I am navbar</h1></>
+return (
+<>
+<ul>
+<li>Home</li>
+<li>About</li>
+<li>Login/signup</li>
+</ul>
 
 
+</>
+
+)
 
 }
 export default Navbar
