@@ -1,17 +1,19 @@
-function Navbar (){
+import './navbar.css';
 
-return (
-<>
-<ul>
-<li>Home</li>
-<li>About</li>
-<li>Login/signup</li>
-</ul>
+function Navbar() {
+
+    return (
+        <>
+            <ul className="nav">
+                <li>Home</li>
+                <li>About</li>
+                <li>Login/signup</li>
+            </ul>
 
 
-</>
+        </>
 
-)
+    )
 
 }
 export default Navbar
