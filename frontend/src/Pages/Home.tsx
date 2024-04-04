@@ -1,6 +1,9 @@
 function Home (){
 
-    return <><h1>I am Home</h1></>
+    return <><h1>I am Home</h1>
+    
+    
+    </>
     
     
     

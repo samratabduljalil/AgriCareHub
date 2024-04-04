@@ -1,6 +1,12 @@
+import './footer.css';
+
 function Footer(){
 
-    return <><h1>I am footer</h1></>
+    return(<>
+    <div className="footer"><h1>I am footer</h1></div>
+    
+    </>
+    ) 
     
     
     

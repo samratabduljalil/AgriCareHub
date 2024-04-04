@@ -1,0 +1,38 @@
+.body{
+
+margin: 0;
+padding:0
+
+}
+
+
+
+.nav{
+margin-top: 0;
+position: sticky;
+width: 100%;
+background-color: rgb(88, 201, 239);
+color: white;
+height: 3.5rem;
+font-size: 1.2rem;
+display:flex;
+
+
+}
+.nav ul{
+display:flex;
+background-color: blueviolet;
+list-style-type: none;
+color: black;
+gap: .55rem;
+margin-left: 66%;
+margin-bottom: 100%;
+}
+.image_logo{
+    margin-top: .9%;
+    height: 50px;
+    width: 50px;
+}
+.logo{
+    display: flex;
+}
