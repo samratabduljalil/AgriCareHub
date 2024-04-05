@@ -1,10 +1,17 @@
+import './home.css';
+
 function Home (){
 
-    return <><h1>I am Home</h1>
+    return(<>
     
-    
-    </>
-    
+        <div className='body'>
+        
+  <button></button>
+
+
+        </div>
+        </>
+        ) 
     
     
     }

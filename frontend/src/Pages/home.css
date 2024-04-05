@@ -1,0 +1,10 @@
+.body{
+    margin-top: 0;
+    height:100vh  ;
+  width: 100% ;
+background-image:url('/image/_3c059275-0cb8-4448-b051-237b94fa5441.jpg') ;
+    
+background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-position: center; 
+  
+}
