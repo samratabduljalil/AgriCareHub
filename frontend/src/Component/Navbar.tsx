@@ -1,10 +1,10 @@
 import './navbar.css';
-import Modal from './Component/Modal'
+
 function Navbar() {
 
     return (
         <>
-          <Modal></Modal>
+          
 
            <div className="nav">
            
