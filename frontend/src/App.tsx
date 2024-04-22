@@ -6,6 +6,7 @@ import Modal from './Component/Modal'
 import Home from './Pages/Home'
 
 function App() {
+  const [showModal, setShowModal] = useState(true)
 
   return (
     <>
@@ -13,7 +14,7 @@ function App() {
       <Navbar></Navbar>
       <Home />
       <Footer></Footer>
-      <Modal></Modal>
+      {showModal && <Modal onClose={() => setShowModal(false)} />}
 
 
     </>
