@@ -1,17 +1,26 @@
 import './home.css';
-
+import { useState } from 'react'
+import Navbar from '../Component/Navbar'
+import Footer from '../Component/Footer'
+import Modal from '../Component/Modal'
 function Home (){
 
-    return(<>
+const [showModal, setShowModal] = useState(true)
+
+return (
+  <>
+
+    <Navbar></Navbar>
     
-        <div className='body'>
-        
-  <button></button>
 
 
-        </div>
-        </>
-        ) 
+    
+    <Footer></Footer>
+    {showModal && <Modal onClose={() => setShowModal(false)} />}
+
+
+  </>
+)
     
     
     }

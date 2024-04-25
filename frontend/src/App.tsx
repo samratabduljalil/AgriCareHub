@@ -1,22 +1,21 @@
-import { useState } from 'react'
-
-import Navbar from './Component/Navbar'
-import Footer from './Component/Footer'
-import Modal from './Component/Modal'
+import React from 'react';
+import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 import Home from './Pages/Home'
+import About from './Pages/About'
 
 function App() {
-  const [showModal, setShowModal] = useState(true)
+  
 
   return (
     <>
 
-      <Navbar></Navbar>
-      <Home />
-      <Footer></Footer>
-      {showModal && <Modal onClose={() => setShowModal(false)} />}
-
-
+  
+<Router>
+      <Routes>
+        <Route  path="/" element={<Home/>} />
+        <Route  path="/About" element={<About/>} />
+        </Routes>
+    </Router>
     </>
   )
 }
