@@ -12,7 +12,10 @@ return (
 
     <Navbar></Navbar>
     
-
+    <div className="x-100 y-160 bg-gray-200 ">
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">upload</button>
+      <button className="bg-blue-500 hover:bg-blue-700  text-white font-bold py-2 px-4 rounded">Demo</button>
+    </div>
 
     
     <Footer></Footer>

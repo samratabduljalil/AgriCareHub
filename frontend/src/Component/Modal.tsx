@@ -11,7 +11,7 @@ function Modal({ onClose }) {
 
 
                 <div className="bg-indigo-600 rounded-xl px-20 py-10 flex flex-col gap-5 items-center mx-4 text-white">
-                    <h1>samrat abdul jalil</h1>
+                    <h1>আমি গরুর মাংস ভালোবাসি</h1>
                     <div className="flex items-center justify-center gap-10">
                         <button className="mt-4 w-full bg-black px-2 py-1 rounded-sm" onClick={onClose}>close</button>
                         <button className="mt-4 w-full bg-black px-2 py-1 rounded-sm">gorib</button>
