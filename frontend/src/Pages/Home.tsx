@@ -1,4 +1,5 @@
 import './home.css';
+import {NavLink} from 'react-router-dom';
 import { useState } from 'react'
 import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer'
@@ -12,9 +13,18 @@ return (
 
     <Navbar></Navbar>
     
-    <div className="x-100 y-160 bg-gray-200 ">
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">upload</button>
-      <button className="bg-blue-500 hover:bg-blue-700  text-white font-bold py-2 px-4 rounded">Demo</button>
+    <div className="hero">
+
+   <div className="card">
+    <p className='card_text'>আপনার ফসলের রোগ নির্ণয় করতে চাইলে বোতামে চাপ দিন।  কিভাবে করবেন জানতে চাইলে বোতামে চাপ দিন।</p>
+   <button className="btn_upload"><NavLink to="/Medication">upload</NavLink></button>
+    <button className="btn_demo"><NavLink to="/Demo">Demo</NavLink></button>
+    
+
+   </div>
+     
+    
+    
     </div>
 
     

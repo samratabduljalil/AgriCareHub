@@ -1,16 +1,44 @@
-.body{
-    margin-top: 0;
-    height:100vh  ;
-  width: 100% ;
-background-image:url('/image/_3c059275-0cb8-4448-b051-237b94fa5441.jpg') ;
-    
-background-repeat: no-repeat; /* Prevents the background image from repeating */
-  background-position: center; 
-  
-}
-.hero{
+body{
 
-width: 100%;
-height: 50%;
-background-color: black;
+  background-color: black;
+
+}
+
+
+.hero{
+display: flex;
+height: 100vh;
+align-items: center;
+justify-items: center;
+justify-content: center;
+
+}
+.card {
+  width: 350px;
+ height: 350px;
+  display: grid;
+  grid-template-columns: 1fr ;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.btn_upload{
+ padding: 3px;
+ background-color: green;
+ border-radius: 5px;
+ margin-right: 150px;
+
+
+
+}
+.card_text{
+display: flex;
+text-align: center;
+justify-content: center;
+background-color: aqua;
+
 }
