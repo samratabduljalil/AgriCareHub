@@ -4,33 +4,33 @@ import cors from 'cors'
 
 
 
-const app =express();
+const app = express();
 app.use(cors());
 
 
-const db= mysql.createConnection({
- host: "localhost",
- user:"root",
- password: "",
- database: "agricarehub"
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "agricarehub"
 
 })
 
-app.get('/',(req,res)=>{
-const sql = "select * from Medication";
+app.get('/', (req, res) => {
+    const sql = "select * from medication";
 
-db.query(sql,(err,result)=>{
+    db.query(sql, (err, result) => {
 
-    if(err) return res.json("server error");
-    return res.json(result);
+        if (err) return res.json("server error c");
+        return res.json(result);
+    })
+
+
 })
 
 
-})
 
-
-
-app.listen(2000, ()=>{
-console.log("")
+app.listen(2000, () => {
+    console.log("cow")
 
 })
