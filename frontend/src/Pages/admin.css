@@ -1,0 +1,43 @@
+.body {
+    display: flex;
+
+
+
+
+
+}
+
+
+
+
+.card_container {
+
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    background-color: brown;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+
+}
+
+.card_contain {
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    gap: 3%;
+    grid-template-columns: 1fr 1fr;
+
+
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    background-color: aqua;
+
+
+}

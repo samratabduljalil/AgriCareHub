@@ -1,0 +1,42 @@
+.sidebar {
+    background-color: aqua;
+    height: 100vh;
+    width: 20%;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.profile_image {
+    margin-top: 2%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+
+
+
+}
+
+.ul {
+
+    margin-top: 60%;
+    width: 100%;
+
+}
+
+li {
+    background-color: black;
+    border: 2px solid rgb(253, 251, 251);
+    padding: 1%;
+    cursor: pointer;
+}
+
+li:hover {
+
+    background-color: rgb(30, 28, 28);
+    padding: 2%;
+
+}
