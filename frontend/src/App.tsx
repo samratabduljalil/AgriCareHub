@@ -5,6 +5,7 @@ import About from './Pages/About'
 import Medication from './Pages/Medication'
 import Demo from './Pages/Demo'
 import ImageUploader from './Pages/ImageUploader';
+import Admin from './Pages/Admin'
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
         <Route  path="/Medication" element={<Medication/>} />
         <Route  path="/Demo" element={<Demo/>} />
         <Route  path="/ImageUploader" element={<ImageUploader/>} />
+        <Route  path="/Admin" element={<Admin/>} />
         </Routes>
     </Router>
     </>

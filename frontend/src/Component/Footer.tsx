@@ -1,14 +1,11 @@
-import './footer.css';
+import React from 'react';
 
-function Footer(){
+const Footer = () => {
+  return (
+    <footer className="bg-gray-800 text-center text-gray-300 py-4">
+      &copy; {new Date().getFullYear()} My Admin App
+    </footer>
+  );
+};
 
-    return(<>
-    <div className="footer"><h1>I am footer</h1></div>
-    
-    </>
-    ) 
-    
-    
-    
-    }
-    export default Footer
+export default Footer;
