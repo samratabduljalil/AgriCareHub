@@ -6,6 +6,7 @@ import Medication from './Pages/Medication'
 import Demo from './Pages/Demo'
 import ImageUploader from './Pages/ImageUploader';
 import Admin from './Pages/Admin'
+import UpMedication from './Pages/UpMedication'
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
         <Route  path="/Demo" element={<Demo/>} />
         <Route  path="/ImageUploader" element={<ImageUploader/>} />
         <Route  path="/Admin" element={<Admin/>} />
+        <Route  path="/UpMedication" element={<UpMedication/>} />
         </Routes>
     </Router>
     </>

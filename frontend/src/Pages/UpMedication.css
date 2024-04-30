@@ -1,0 +1,28 @@
+.main{
+ display: flex;
+justify-items: center;
+align-items: center;
+color: aliceblue;
+width: 70%;
+
+}
+
+.card_contain{
+
+
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    gap: 3%;
+    grid-template-columns: 1fr ;
+}
+.card{
+    
+ background-color: red;
+ height: 500px;
+ width: 500px;
+ position: absolute;
+ display: flex;
+
+}
