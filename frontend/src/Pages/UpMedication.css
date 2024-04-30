@@ -1,13 +1,21 @@
-.main{
- display: flex;
-justify-items: center;
-align-items: center;
-color: aliceblue;
-width: 70%;
+.main_med {
+    display: flex;
+
 
 }
 
-.card_contain{
+.card_container_med {
+
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    background-color: brown;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.card_contain_med {
 
 
     justify-content: center;
@@ -15,14 +23,15 @@ width: 70%;
     align-items: center;
     display: grid;
     gap: 3%;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr 1fr;
 }
-.card{
-    
- background-color: red;
- height: 500px;
- width: 500px;
- position: absolute;
- display: flex;
+
+.card_med {
+
+    background-color: red;
+    height: 500px;
+    width: 500px;
+
+    display: flex;
 
 }
