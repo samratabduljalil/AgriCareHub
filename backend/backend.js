@@ -28,8 +28,27 @@ app.get('/', (req, res) => {
 
 })
 
-
-
+app.post("/updatemedication", (req, res) => {
+    const { Disease_Name, Medication_in_bangla,Medicine_name } = req.body;
+  
+   
+  
+      const sql = 'INSERT INTO `medication`(`Disease_name`, `Medication`, `Medicine_name`) VALUES (?, ?,?)';
+      const values = [Disease_Name, Medication_in_bangla,Medicine_name];
+  
+      connection.query(sql, values, (err, result) => {
+        connection.release();
+  
+        if (err) {
+          console.error('Error executing MySQL query:', err);
+          res.status(500).json({ message: 'Failed to save data' });
+          return;
+        }
+  
+        res.status(200).json({ message: 'Data saved successfully' });
+      });
+    });
+  
 app.listen(2000, () => {
     console.log("cow")
 

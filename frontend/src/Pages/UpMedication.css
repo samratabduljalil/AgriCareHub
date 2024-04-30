@@ -13,6 +13,7 @@
     justify-content: center;
     justify-items: center;
     align-items: center;
+
 }
 
 .card_contain_med {
@@ -23,7 +24,7 @@
     align-items: center;
     display: grid;
     gap: 3%;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr ;
 }
 
 .card_med {
@@ -31,7 +32,10 @@
     background-color: red;
     height: 500px;
     width: 500px;
-
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
     display: flex;
+    border-radius: 5px;
 
 }
