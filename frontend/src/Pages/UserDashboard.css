@@ -1,0 +1,46 @@
+.body_user{
+
+    display: flex;
+    color: white;
+
+
+}
+
+
+
+.user_container{
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    background-color: brown;
+    justify-content: center;
+    
+
+
+}
+.user_contain{
+
+    margin-top:8% ;
+    display: grid;
+    gap: 1%;
+    grid-template-columns: 1fr;
+    
+}
+.User_card{
+    width: 600px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+
+    
+}
