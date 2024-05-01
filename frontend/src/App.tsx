@@ -7,6 +7,7 @@ import Demo from './Pages/Demo'
 import ImageUploader from './Pages/ImageUploader';
 import Admin from './Pages/Admin'
 import UpMedication from './Pages/UpMedication'
+import ChoseCrop from './Pages/ChoseCrop'
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
         <Route  path="/ImageUploader" element={<ImageUploader/>} />
         <Route  path="/Admin" element={<Admin/>} />
         <Route  path="/UpMedication" element={<UpMedication/>} />
+        <Route  path="/ChoseCrop" element={<ChoseCrop/>} />
         </Routes>
     </Router>
     </>
