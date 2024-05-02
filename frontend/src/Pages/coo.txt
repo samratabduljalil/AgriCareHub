@@ -60,3 +60,40 @@ function UpMedication() {
 
 }
 export default UpMedication
+
+
+
+
+
+
+
+
+
+
+
+
+import './navbar.css';
+import { NavLink } from 'react-router-dom';
+function Navbar() {
+
+    return (
+        <>
+
+
+            <div className="nav">
+
+                <img src="\public\image\_14cdbdd2-955a-4e74-a067-18387740e6d1.png" alt="" className="image_logo" />
+
+                <ul className='ul_nav'>
+                    <li className='li_nav'><NavLink to="/">Home</NavLink> </li>
+                    <li className='li_nav'><NavLink to="/About">About</NavLink> </li>
+                    <li className='li_nav'>Login/signup</li>
+                </ul>
+
+            </div>
+        </>
+
+    )
+
+}
+export default Navbar

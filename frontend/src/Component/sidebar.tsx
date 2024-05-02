@@ -9,10 +9,10 @@ const Sidebar = () => {
 
 
             <ul className='ul'>
-                <li>Home</li>
-                <li>Upload Medication</li>
-                <li>Upload New Model</li>
-                <li>maintain history</li>
+                <li className='li'>Home</li>
+                <li className='li'>Upload Medication</li>
+                <li className='li'>Upload New Model</li>
+                <li className='li'>maintain history</li>
 
 
             </ul>

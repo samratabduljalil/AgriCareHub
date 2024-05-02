@@ -27,14 +27,14 @@
 
 }
 
-li {
+.li {
     background-color: black;
     border: 2px solid rgb(253, 251, 251);
     padding: 1%;
     cursor: pointer;
 }
 
-li:hover {
+.li:hover {
 
     background-color: rgb(30, 28, 28);
     padding: 2%;
