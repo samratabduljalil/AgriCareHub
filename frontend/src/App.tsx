@@ -9,6 +9,7 @@ import Admin from './Pages/Admin'
 import UpMedication from './Pages/UpMedication'
 import ChoseCrop from './Pages/ChoseCrop'
 import UserDashboard from './Pages/UserDashboard'
+import Signup from './Pages/Signup'
 
 function App() {
   
@@ -28,6 +29,7 @@ function App() {
         <Route  path="/UpMedication" element={<UpMedication/>} />
         <Route  path="/ChoseCrop" element={<ChoseCrop/>} />
         <Route  path="/UserDashboard" element={<UserDashboard/>} />
+        <Route  path="/Signup" element={<Signup/>} />
         </Routes>
     </Router>
     </>

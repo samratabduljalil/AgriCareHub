@@ -46,6 +46,31 @@ app.post("/updatemedication", (req, res) => {
   });
 });
 
+
+
+app.post("/signup", (req, res) => {
+    const { Phone,
+        Name,
+        District,
+        Password} = req.body;
+  
+    const sql = 'INSERT INTO `farmer`( `name`, `phone`, `password`, `district`)VALUES (?, ?, ?,?)';
+    const values = [Phone,
+        Name,
+        District,
+        Password];
+  
+    db.query(sql, values, (err, result) => {
+        if (err) {
+            console.error('Error executing MySQL query:', err);
+            return res.status(500).json({ message: 'Failed to save data' });
+        }
+  
+        res.status(200).json({ message: 'Data saved successfully' });
+    });
+  });
+  
+
   
 app.listen(2000, () => {
     console.log("cow")
