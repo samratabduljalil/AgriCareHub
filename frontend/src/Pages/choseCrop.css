@@ -78,3 +78,26 @@ margin-bottom: 9%;
   position: absolute;
 
   }
+  .prompt_div{
+    background-color: aliceblue;
+    width: 350px;
+    height: 200px;
+    border-radius: 7px;
+    margin-top: 25px;
+  }
+  .btn_image_up{
+   background-color: green;
+   padding: 10px;
+   border-radius: 7px;
+
+
+
+  }
+  .btn_image_up:hover{
+    background-color: rgb(22, 150, 22);
+    padding: 11px;
+    border-radius: 2px;
+    transition: .25s;
+ 
+ 
+   }

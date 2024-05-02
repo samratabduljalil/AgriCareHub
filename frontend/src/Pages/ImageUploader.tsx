@@ -38,12 +38,12 @@ const UploadImage = () => {
     
         <h1 className='chose_h1'>আপনি কোন ধরনের ফসলের রোগ নির্ণয় করতে চান?</h1>
        
-        <button className='btn_rice'><NavLink to="/ChoseCrop">ধান</NavLink></button>
+        
        
-        <input type="file" onChange={handleFileChange} />
-      <button className='bg-green-600' onClick={handleUpload}>Upload</button>
+        <input type="file" className='text-white' onChange={handleFileChange} />
+      <button className='btn_image_up' onClick={handleUpload}>Upload</button>
       {predictionResult && (
-        <div>
+        <div className='prompt_div'>
           <h3>Prediction:</h3>
           <p>Class: {predictionResult.class}</p>
           <p>Confidence: {predictionResult.confidence}</p>
