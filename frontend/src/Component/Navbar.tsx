@@ -4,12 +4,13 @@ import './navbar.css';
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
-    return (
-        <nav className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between bg-green-700 py-4 px-6">
-            {/* Logo */}
+    return (<>
+        
+        <nav className=" nav_color fixed top-0 left-0 right-0 z-10 flex items-center justify-between py-4 px-6 ">
+          
             <div className="flex items-center flex-shrink-0 text-white mr-6">
-                <img className="h-8 w-8" src="your-logo-image-url" alt="Logo" />
-                <span className="font-semibold text-xl tracking-tight ml-2">Logo</span>
+                <img className="h-8 w-8" src="\public\image\_14cdbdd2-955a-4e74-a067-18387740e6d1.png" alt="Logo" />
+                
             </div>
 
             {/* Navbar Items */}
@@ -21,7 +22,10 @@ function Navbar() {
                     <li><NavLink to="/contact" className="nav_btn">Contact</NavLink></li>
                 </ul>
             </div>
+           
         </nav>
+      
+        </>
     );
 }
 

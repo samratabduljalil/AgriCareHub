@@ -15,10 +15,11 @@ return (
     
     <div className="hero">
 
-   <div className="card">
+   <div className="card_h">
+    <img src="\public\image\_14cdbdd2-955a-4e74-a067-18387740e6d1.png" alt="" className='home_image' />
     <p className='card_text'>আপনার ফসলের রোগ নির্ণয় করতে চাইলে বোতামে চাপ দিন।  কিভাবে করবেন জানতে চাইলে বোতামে চাপ দিন।</p>
-   <button className="btn_upload"><NavLink to="/Medication">upload</NavLink></button>
-    <button className="btn_demo"><NavLink to="/Demo">Demo</NavLink></button>
+   <button className="btn_upload"><NavLink to="/ChoseCrop">ছবি নির্বাচন করুন</NavLink></button>
+    
     
 
    </div>

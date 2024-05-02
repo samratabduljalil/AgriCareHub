@@ -97,3 +97,31 @@ function Navbar() {
 
 }
 export default Navbar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div className='text-white'>
+      <h2>Upload Image</h2>
+      <input type="file" onChange={handleFileChange} />
+      <button className='bg-green-600' onClick={handleUpload}>Upload</button>
+      {predictionResult && (
+        <div>
+          <h3>Prediction:</h3>
+          <p>Class: {predictionResult.class}</p>
+          <p>Confidence: {predictionResult.confidence}</p>
+        </div>
+      )}
+    </div>
