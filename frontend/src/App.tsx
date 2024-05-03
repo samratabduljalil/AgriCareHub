@@ -10,6 +10,8 @@ import UpMedication from './Pages/UpMedication'
 import ChoseCrop from './Pages/ChoseCrop'
 import UserDashboard from './Pages/UserDashboard'
 import Signup from './Pages/Signup'
+import DumyHome from './Pages/DumyHome'
+import Login from './Pages/Login'
 
 function App() {
   
@@ -30,6 +32,8 @@ function App() {
         <Route  path="/ChoseCrop" element={<ChoseCrop/>} />
         <Route  path="/UserDashboard" element={<UserDashboard/>} />
         <Route  path="/Signup" element={<Signup/>} />
+        <Route  path="/DumyHome" element={<DumyHome/>} />
+        <Route  path="/Login" element={<Login/>} />
         </Routes>
     </Router>
     </>

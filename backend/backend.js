@@ -1,13 +1,26 @@
 import express from 'express'
 import mysql from 'mysql'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
+import jwt from 'jsonwebtoken'
 
 
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+app.use(cors(
+{
 
+origin:["http://localhost:5173"],
+methods:["POST,GET"],
+credentials: true
+
+
+}
+
+
+));
+app.use(express.json());
+app.use(cookieParser());
 
 
 const db = mysql.createConnection({
@@ -17,6 +30,42 @@ const db = mysql.createConnection({
     database: "agricarehub"
 
 })
+
+const verifyUser =(req, res, next)=>{
+const token = req.cookies.token;
+if(!token){
+ return res.json({Message:"token is not avaiable"})
+
+
+}else{
+jwt.verify(token,"agricarehub",(err,decoded)=>{
+
+
+    if(err){
+   return res.json({Message: "Authentication error"})
+
+
+    }else{
+
+ req.admin_id =decoded.admin_id;
+ next();
+
+    }
+})
+
+
+}
+
+
+}
+
+
+app.get('/Auth',verifyUser,(req,res)=>{
+
+    return res.json({Status : "Success" ,admin_id: req.admin_id})
+
+}
+)
 
 app.get('/', (req, res) => {
     const sql = "select * from medication";
@@ -69,8 +118,50 @@ app.post("/signup", (req, res) => {
         res.status(200).json({ message: 'Data saved successfully' });
     });
   });
-  
 
+
+
+
+
+  app.post("/login", (req, res) => {
+    const { Phone,
+        Password} = req.body;
+  
+    const sql = 'SELECT * FROM `admin` WHERE `email`= ? AND `password`= ? ';
+    const values = [Phone,
+        Password];
+  
+    db.query(sql, values, (err, data) => {
+        if (err) {
+            console.error('Error executing MySQL query:', err);
+            return res.json({ message: 'server error' });
+        }
+             if(data.length > 0){
+                    const admin_id =data[0].admin_id;
+                    const token = jwt.sign({admin_id},"agricarehub",{expiresIn:'1d'});
+                    res.cookie('token',token);
+                    return res.json({Status : "Success"})
+
+
+             }else{
+
+                return res.json({ message: 'No data found' });
+
+             }
+
+
+
+  
+        
+    });
+  });
+  
+ app.get('/logout',(req,res)=>{
+
+res.clearCookie('token');
+return res.json({Status : "Success"})
+
+ })
   
 app.listen(2000, () => {
     console.log("cow")
