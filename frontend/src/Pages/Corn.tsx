@@ -18,7 +18,7 @@ const Corn = () => {
             const formData = new FormData();
             formData.append('file', selectedFile);
 
-            const response = await axios.post('http://localhost:8000/predict', formData, {
+            const response = await axios.post('http://localhost:8000/predictCorn', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

@@ -18,7 +18,7 @@ const Potato = () => {
             const formData = new FormData();
             formData.append('file', selectedFile);
 
-            const response = await axios.post('http://localhost:8000/predict', formData, {
+            const response = await axios.post('http://localhost:8000/predictPotato', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
