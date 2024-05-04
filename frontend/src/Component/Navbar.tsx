@@ -19,7 +19,7 @@ function Navbar() {
                     <li><NavLink to="/" className="nav_btn">Home</NavLink></li>
                     <li><NavLink to="/about" className="nav_btn" >About</NavLink></li>
                     <li><NavLink to="/services" className="nav_btn">Services</NavLink></li>
-                    <li><NavLink to="/contact" className="nav_btn">Contact</NavLink></li>
+                    <li><NavLink to="/contact" className="nav_btn">Signup</NavLink></li>
                 </ul>
             </div>
            

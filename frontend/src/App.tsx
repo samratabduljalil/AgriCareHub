@@ -12,6 +12,8 @@ import UserDashboard from './Pages/UserDashboard'
 import Signup from './Pages/Signup'
 import DumyHome from './Pages/DumyHome'
 import Login from './Pages/Login'
+import UserSignup from './Pages/UserSignup'
+import UserLogin from './Pages/UserLogin'
 
 function App() {
   
@@ -34,6 +36,8 @@ function App() {
         <Route  path="/Signup" element={<Signup/>} />
         <Route  path="/DumyHome" element={<DumyHome/>} />
         <Route  path="/Login" element={<Login/>} />
+        <Route  path="/UserSignup" element={<UserSignup/>} />
+        <Route  path="/UserLogin" element={<UserLogin/>} />
         </Routes>
     </Router>
     </>

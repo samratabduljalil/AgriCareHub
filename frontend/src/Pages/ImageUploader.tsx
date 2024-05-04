@@ -36,11 +36,11 @@ const UploadImage = () => {
     
     <div className="Crop_card">
     
-        <h1 className='chose_h1'>আপনি কোন ধরনের ফসলের রোগ নির্ণয় করতে চান?</h1>
+        <h1 className='chose_h1'>আপনার রোগাক্রান্ত ফসলের রোগ নির্ণয়ের জন্য সাদা রঙের বোতামে চাপ দিয়ে ছবি পছন্দ করুন তারপর নির্নয় লিখা বোতামে চাপ দিন। </h1>
        
         
-       
-        <input type="file" className='text-white' onChange={handleFileChange} />
+        
+        <input type="file"   id="fileInput" name="fileInput" accept=".jpg, .jpeg, .png" className='text-white rounded-sm' onChange={handleFileChange} />
       <button className='btn_image_up' onClick={handleUpload}>Upload</button>
       {predictionResult && (
         <div className='prompt_div'>

@@ -6,7 +6,7 @@ import Footer from '../Component/Footer'
 import Modal from '../Component/Modal'
 function Home (){
 
-const [showModal, setShowModal] = useState(true)
+const [showModal, setShowModal] = useState(false)
 
 return (
   <>
@@ -18,7 +18,7 @@ return (
    <div className="card_h">
     <img src="\public\image\_14cdbdd2-955a-4e74-a067-18387740e6d1.png" alt="" className='home_image' />
     <p className='card_text'>আপনার ফসলের রোগ নির্ণয় করতে চাইলে বোতামে চাপ দিন।  কিভাবে করবেন জানতে চাইলে বোতামে চাপ দিন।</p>
-   <button className="btn_upload"><NavLink to="/ChoseCrop">ছবি নির্বাচন করুন</NavLink></button>
+   <button onClick={()=>setShowModal(true)} className="btn_upload">ছবি নির্বাচন করুন</button>
     
     
 
