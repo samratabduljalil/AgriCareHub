@@ -1,10 +1,28 @@
 import './home.css';
 import {NavLink} from 'react-router-dom';
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
 import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer'
 import Modal from '../Component/Modal'
+
+type TawkAPIType = {
+  [key: string]: any;
+};
 function Home (){
+  useEffect(() => {
+    // This code will run when the component mounts
+    var Tawk_API: TawkAPIType = (window as any).Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6636303807f59932ab3bffaf/1ht1qontq';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  }, []);
 
 const [showModal, setShowModal] = useState(false)
 
@@ -32,7 +50,7 @@ return (
     <Footer></Footer>
     {showModal && <Modal onClose={() => setShowModal(false)} />}
 
-
+    
   </>
 )
     

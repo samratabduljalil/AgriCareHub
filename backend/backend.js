@@ -78,6 +78,36 @@ app.get('/', (req, res) => {
 
 
 })
+app.post('/data', (req, res) => {
+    const { predictionResult} = req.body;
+  
+    const sql = 'select * from medication WHERE `Disease_name`= ?';
+    const values = [predictionResult];
+   console.log(predictionResult);
+    db.query(sql, values, (err, data) => {
+        if (err) {
+            console.error('Error executing MySQL query:', err);
+            return res.json({ message: 'server error' });
+        }
+             if(data.length > 0){
+                console.log(data);
+                return res.json(data);
+
+
+             }else{
+
+                return res.json({ message: 'No data found' });
+
+             }
+
+
+
+  
+        
+    });
+
+
+})
 
 app.post("/updatemedication", (req, res) => {
   const { Disease_Name, Medication_in_bangla, Medicine_name } = req.body;

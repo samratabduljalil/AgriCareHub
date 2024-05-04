@@ -23,6 +23,7 @@ const UpMedication = () => {
             setDisease_Name('');
             setMedication_in_bangla('');
             setMedicine_name('');
+            alert("Insert Sucessefully")
 
         } catch (error) {
             console.error(error);
@@ -40,12 +41,13 @@ const UpMedication = () => {
                         <form onSubmit={handleSubmit}>
 
 
-                            <input className='UP_in_box' type="text" value={Disease_Name} onChange={(e) => setDisease_Name(e.target.value)} />
+                            <input className='UP_in_box' placeholder='Enter Disease Name' type="text" value={Disease_Name} onChange={(e) => setDisease_Name(e.target.value)} />
 
-                            <input className='UP_in_box' type="text" value={Medication_in_bangla} onChange={(e) => setMedication_in_bangla(e.target.value)} />
+                            <input className='UP_in_box' placeholder='Enter Medication in bangla' type="text" value={Medication_in_bangla} onChange={(e) => setMedication_in_bangla(e.target.value)} />
 
-                            <input className='UP_in_box' type="text" value={Medicine_name} onChange={(e) => setMedicine_name(e.target.value)} />
+                            <input className='UP_in_box' placeholder='Enter Medicine name in bangla' type="text" value={Medicine_name} onChange={(e) => setMedicine_name(e.target.value)} />
                             <br></br>
+                            
                             <button className='UP_btn_submit' type="submit">Submit</button>
                         </form>
                     </div>

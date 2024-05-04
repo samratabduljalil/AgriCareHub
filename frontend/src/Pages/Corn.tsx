@@ -8,6 +8,7 @@ import Footer from '../Component/Footer'
 const Corn = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [predictionResult, setPredictionResult] = useState(null);
+    const [data, setData] = useState('');
 
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
@@ -24,7 +25,16 @@ const Corn = () => {
                 }
             });
 
-            setPredictionResult(response.data);
+            setPredictionResult(response.data.class);
+
+            const response2 = await axios.post('http://localhost:2000/data', {
+                predictionResult
+               
+            });
+            setData(response2.data)
+            console.log(response2.data);
+
+
         } catch (error) {
             console.error('Error uploading image:', error);
         }
@@ -45,8 +55,8 @@ const Corn = () => {
                 {predictionResult && (
                     <div className='prompt_div'>
                         <h3>Prediction:</h3>
-                        <p>Class: {predictionResult.class}</p>
-                        <p>Confidence: {predictionResult.confidence}</p>
+                        <p>Class: {data[0].Medication}</p>
+                        <p>Confidence: {predictionResult}</p>
 
                     </div>
 

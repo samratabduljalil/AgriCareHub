@@ -33,13 +33,13 @@ function App() {
           <Route path="/Medication" element={<Medication />} />
           <Route path="/Demo" element={<Demo />} />
           <Route path="/ImageUploader" element={<ImageUploader />} />
-          <Route path="/Admin" element={<Admin />} />
+          <Route path="/AdminDashboard" element={<Admin />} />
           <Route path="/UpMedication" element={<UpMedication />} />
           <Route path="/ChoseCrop" element={<ChoseCrop />} />
           <Route path="/UserDashboard" element={<UserDashboard />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/DumyHome" element={<DumyHome />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/AdminLogin" element={<Login />} />
           <Route path="/UserSignup" element={<UserSignup />} />
           <Route path="/UserLogin" element={<UserLogin />} />
           <Route path="/Wheat" element={<Wheat />} />

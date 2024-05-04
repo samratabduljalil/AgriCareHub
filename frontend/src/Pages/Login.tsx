@@ -3,13 +3,31 @@ import axios from 'axios';
 import './Signup.css';
 import Sidebar from '../Component/sidebar';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
+
 
 
 const Login = () => {
     const [Phone, setPhone] = useState('');
     const [Password, setPassword] = useState('');
-    const navigate =useNavigate();;
+    const navigate =useNavigate();
     axios.defaults.withCredentials = true;
+    useEffect(()=>{
+
+        axios.get('http://localhost:2000/Auth')
+        .then(res=>{
+        
+        if(res.data.Status==="Success"){
+            navigate('/Admin') 
+        
+        }
+        
+        
+        
+        })
+        
+        
+        },[])
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -27,7 +45,7 @@ const Login = () => {
 
             if(response.data.Status === "Success"){
 
-                navigate('/DumyHome') 
+                navigate('/AdminDashboard') 
                 alert("login Successfully")
 
             }else{
@@ -54,8 +72,8 @@ const Login = () => {
 
                            
 
-                            <input className='UP_in_box_s' type="text" value={Phone} onChange={(e) => setPhone(e.target.value)} />
-                            <input className='UP_in_box_s' type="text" value={Password} onChange={(e) => setPassword(e.target.value)} />
+                            <input className='UP_in_box_s' type="email" value={Phone} onChange={(e) => setPhone(e.target.value)}  required/>
+                            <input className='UP_in_box_s' type="password" value={Password} onChange={(e) => setPassword(e.target.value)} required />
                             <br></br>
                             <button className='UP_btn_submit_s' type="submit">Login</button>
                         </form>
