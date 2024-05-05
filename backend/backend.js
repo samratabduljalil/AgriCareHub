@@ -21,6 +21,7 @@ credentials: true
 ));
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.static('audio'))
 
 
 const db = mysql.createConnection({
@@ -137,11 +138,11 @@ const verifyUser2 =(req, res, next)=>{
 
 
 app.post('/data', (req, res) => {
-    const { predictionResult} = req.body;
+    const { prediction} = req.body;
   
     const sql = 'select * from medication WHERE `Disease_name`= ?';
-    const values = [predictionResult];
-   console.log(predictionResult);
+    const values = [prediction];
+   console.log(prediction);
     db.query(sql, values, (err, data) => {
         if (err) {
             console.error('Error executing MySQL query:', err);

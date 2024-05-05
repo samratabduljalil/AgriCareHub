@@ -10,6 +10,9 @@ const Signup = () => {
     const [District, setDistrict] = useState('');
     const [Password, setPassword] = useState('');
 
+
+    
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 

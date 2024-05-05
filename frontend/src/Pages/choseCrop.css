@@ -80,10 +80,12 @@ margin-bottom: 9%;
   }
   .prompt_div{
     background-color: aliceblue;
-    width: 350px;
-    height: 200px;
+    display: flex;
+    flex-direction: column;
     border-radius: 7px;
     margin-top: 25px;
+    color: black;
+    
   }
   .btn_image_up{
    background-color: green;
