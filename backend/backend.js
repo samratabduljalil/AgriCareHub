@@ -78,6 +78,64 @@ app.get('/', (req, res) => {
 
 
 })
+
+
+
+
+
+
+
+const verifyUser2 =(req, res, next)=>{
+    const token2 = req.cookies.token2;
+    if(!token2){
+     return res.json({Message:"token is not avaiable"})
+    
+    
+    }else{
+    jwt.verify(token2,"agricarehub",(err,decoded)=>{
+    
+    
+        if(err){
+       return res.json({Message: "Authentication error"})
+    
+    
+        }else{
+    
+     req.user_id =decoded.user_id;
+     next();
+    
+        }
+    })
+    
+    
+    }
+    
+    
+    }
+    
+    
+    app.get('/AuthUser',verifyUser2,(req,res)=>{
+    
+        return res.json({Status : "Success" ,admin_id: req.user_id})
+    
+    }
+    )
+    
+    app.get('/', (req, res) => {
+        const sql = "select * from medication";
+    
+        db.query(sql, (err, result) => {
+    
+            if (err) return res.json("server error c");
+            return res.json(result);
+        })
+    
+    
+    })
+
+
+
+
 app.post('/data', (req, res) => {
     const { predictionResult} = req.body;
   
@@ -236,6 +294,40 @@ app.post("/signup", (req, res) => {
         
     });
   });
+
+
+  app.post("/userlogin", (req, res) => {
+    const { Phone,
+        Password} = req.body;
+  
+    const sql = 'SELECT * FROM `farmer` WHERE `phone`= ? AND `password`= ? ';
+    const values = [Phone,
+        Password];
+  
+    db.query(sql, values, (err, data) => {
+        if (err) {
+            console.error('Error executing MySQL query:', err);
+            return res.json({ message: 'server error' });
+        }
+             if(data.length > 0){
+                    const user_id =data[0].user_id;
+                    const token2 = jwt.sign({user_id},"agricarehub",{expiresIn:'1d'});
+                    res.cookie('token2',token2);
+                    return res.json({Status : "Success"})
+
+             }else{
+
+                return res.json({ message: 'No data found' });
+
+             }
+
+
+
+  
+        
+    });
+  });
+  
   
  app.get('/logout',(req,res)=>{
 

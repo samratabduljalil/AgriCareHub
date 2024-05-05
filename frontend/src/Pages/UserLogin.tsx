@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 import axios from 'axios';
 import './Signup.css';
 import Sidebar from '../Component/sidebar';
@@ -10,11 +10,36 @@ const UserLogin = () => {
     const [Password, setPassword] = useState('');
     const navigate =useNavigate();;
     axios.defaults.withCredentials = true;
+
+    
+   
+   useEffect(()=>{
+   
+   axios.get('http://localhost:2000/AuthUser')
+   .then(res=>{
+   
+   if(res.data.Status === "Success"){
+    navigate('/UserDashboard')
+   
+   }else{
+       
+      
+   
+   }
+   
+   
+   
+   })
+   
+   
+   },[])
+
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:2000/login', {
+            const response = await axios.post('http://localhost:2000/userlogin', {
                 Phone,
                 Password
 
@@ -27,7 +52,7 @@ const UserLogin = () => {
 
             if(response.data.Status === "Success"){
 
-                navigate('/DumyHome') 
+                navigate('/UserDashboard') 
                 alert("login Successfully")
 
             }else{
