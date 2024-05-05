@@ -34,7 +34,7 @@ return (
     <div className="hero">
 
    <div className="card_h">
-    <img src="http://localhost:2000/0a8a68ee-f587-4dea-beec-79d02e7d3fa4___RS_Early.JPG" alt="" className='home_image' />
+    <img src="\public\image\_14cdbdd2-955a-4e74-a067-18387740e6d1.png" alt="" className='home_image' />
     <p className='card_text'>আপনার ফসলের রোগ নির্ণয় করতে চাইলে বোতামে চাপ দিন।  কিভাবে করবেন জানতে চাইলে বোতামে চাপ দিন।</p>
    <button onClick={()=>setShowModal(true)} className="btn_upload">ছবি নির্বাচন করুন</button>
     

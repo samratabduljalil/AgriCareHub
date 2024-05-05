@@ -7,11 +7,15 @@
     align-items: center;
     height: 100vh;
     background-color:rgb(8, 12, 26);
+    background-image: url('/public/image/_3c059275-0cb8-4448-b051-237b94fa5441.jpg');
+background-repeat: no-repeat; 
+background-size: cover; 
+background-position: center;
 }
 .Crop_card {
-    width: 600px;
-    height: 450px;
-    background: rgba(255, 255, 255, 0.1);
+  width: 70%;
+  height: 50vh;
+    background: rgba(255, 255, 255, 0.001);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
@@ -25,10 +29,11 @@
     justify-items: center;
   }
   .chose_h1{
-color: aliceblue;
-font-size: larger;
+color: rgb(223, 226, 229);
+font-size: x-large;
+font-weight: bolder;
 margin-bottom: 9%;
-
+background-color: #1B1A55;
   }
   .btn_rice{
     color: aliceblue;

@@ -8,11 +8,14 @@ align-items: center;
 justify-items: center;
 justify-content: center;
 background-color: #FEFBF6;
-
+background-image: url('/public/image/_3c059275-0cb8-4448-b051-237b94fa5441.jpg');
+background-repeat: no-repeat; 
+background-size: cover; 
+background-position: center;
 }
 .card_h {
-  width: 600px;
-    height: 550px;
+  width: 70%;
+    height: 50vh;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 15px;
