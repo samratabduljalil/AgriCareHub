@@ -1,15 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import axios from 'axios';
 import './Signup.css';
-import Sidebar from '../Component/sidebar';
-
+import { useNavigate } from 'react-router-dom';
 
 const UserSignup = () => {
     const [Phone, setPhone] = useState('');
     const [Name, setName] = useState('');
     const [District, setDistrict] = useState('');
     const [Password, setPassword] = useState('');
+    const navigate =useNavigate();;
+    axios.defaults.withCredentials = true;
 
+    
+   
+   useEffect(()=>{
+   
+   axios.get('http://localhost:2000/AuthUser')
+   .then(res=>{
+   
+   if(res.data.Status === "Success"){
+    navigate('/UserDashboard')
+   
+   }else{
+       
+      
+   
+   }
+   
+   
+   
+   })
+   
+   
+   },[])
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
