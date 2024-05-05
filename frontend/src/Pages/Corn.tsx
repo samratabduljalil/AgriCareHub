@@ -35,10 +35,10 @@ const Corn = () => {
                 }
             });
 
-            const prediction = 'Northern Leaf Blight'; // Set prediction
+            const prediction = response.data.class; 
             setPredictionResult(prediction);
     
-            console.log('Prediction:', prediction); // Log prediction
+            console.log('Prediction:', prediction); 
     
             const response2 = await axios.post('http://localhost:2000/data', {
                 prediction // Pass prediction to server
@@ -66,14 +66,14 @@ const Corn = () => {
                 <button className='btn_image_up' onClick={handleUpload}>Upload</button>
                 {data && (
                     <div className='prompt_div'>
-                        <h3>Prediction:</h3>
+                        <h3>Prediction:{data[0].audio_file}</h3>
                         <p>Class: {data[0].Medication}</p>
                         <p>Confidence: {PredictionResult}</p>
                       
-
+                         
                         
-                          <button onClick={toggleAudio}>{isPlaying ? 'Pause' : 'Play'}</button>
-                          <audio id="audio" src="http://localhost:2000/for-her-chill-upbeat-summel-travel-vlog-and-ig-music-royalty-free-use-202298.mp3" />
+                          <button  className="btn_play" onClick={toggleAudio}>{isPlaying ? 'Pause' : 'Play'}</button>
+                          <audio id="audio" src={'http://localhost:2000/'+data[0].audio_file} />
                          
 
                     </div>

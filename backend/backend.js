@@ -3,7 +3,8 @@ import mysql from 'mysql'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import jwt from 'jsonwebtoken'
-
+import multer from 'multer';
+import path from 'path';
 
 
 const app = express();
@@ -22,8 +23,21 @@ credentials: true
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('audio'))
-
-
+var fullFilename='';
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'audio/')
+    },
+    filename: function (req, file, cb) {
+      const originalName = path.parse(file.originalname).name;
+      const timestamp = Date.now();
+       fullFilename = `${originalName}-${timestamp}${path.extname(file.originalname)}`;
+      cb(null, fullFilename);
+    }
+  });
+  
+  const upload = multer({ storage: storage })
+  
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -202,11 +216,11 @@ app.post('/search', (req, res) => {
 
 })
 
-app.post("/insert", (req, res) => {
-  const { Disease_Name, Medication_in_bangla, Medicine_name } = req.body;
-
-  const sql = 'INSERT INTO `medication`(`Disease_name`, `Medication`, `Medicine_name`) VALUES (?, ?, ?)';
-  const values = [Disease_Name, Medication_in_bangla, Medicine_name];
+app.post("/insert", upload.single('audio'),(req, res) => {
+  
+  const audioFilename = req.file.filename;
+  const sql = 'INSERT INTO `medication`(`Disease_name`, `Medication`, `Medicine_name`,`audio_file`) VALUES (?, ?, ?,?)';
+  const values = [req.body.Disease_Name, req.body.Medication_in_bangla, req.body.Medicine_name,audioFilename ];
 
   db.query(sql, values, (err, result) => {
       if (err) {

@@ -103,3 +103,13 @@ margin-bottom: 9%;
  
  
    }
+   .btn_play{
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    border-radius: 20%;
+padding:1%;
+ background-color: rgb(10, 154, 10);
+
+
+   }
