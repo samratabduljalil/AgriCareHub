@@ -4,16 +4,44 @@ import './UpMedication.css';
 import Sidebar from '../Component/sidebar';
 
 
-const UpMedication = () => {
+const UpdateMedication = () => {
     const [Disease_Name, setDisease_Name] = useState('');
     const [Medication_in_bangla, setMedication_in_bangla] = useState('');
     const [Medicine_name, setMedicine_name] = useState('');
+    const [Disease, setDisease] = useState('');
+
+
+
+
+    const handleSubmit2 = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:2000/search', {
+                Disease
+            });
+
+            console.log(response.data); // Handle successful submission
+            setDisease_Name(response.data[0].Disease_name);
+            setMedication_in_bangla(response.data[0].Medication);
+            setMedicine_name(response.data[0].Medicine_name);
+           
+
+        } catch (error) {
+            console.error(error);
+            // Handle form submission errors
+        }
+    };
+
+
+
+
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:2000/insert', {
+            const response = await axios.post('http://localhost:2000/updatemedication', {
                 Disease_Name,
                 Medication_in_bangla,
                 Medicine_name
@@ -23,7 +51,7 @@ const UpMedication = () => {
             setDisease_Name('');
             setMedication_in_bangla('');
             setMedicine_name('');
-            alert("Insert Sucessefully")
+            alert("Update Medication  Sucessefully")
 
         } catch (error) {
             console.error(error);
@@ -38,7 +66,13 @@ const UpMedication = () => {
                 <div className="card_contain_med">
                     <div className="card_med">
                         <h1 className='Up_title'>Insert Medicine details</h1>
-                        <form onSubmit={handleSubmit}>
+                        <form className='search_form' onSubmit={handleSubmit2}>
+
+                        <input value={Disease} onChange={(e) => setDisease(e.target.value)} className='search' type="search" name="" id="" placeholder='search' />
+                        <button className='btn_search' type="submit">Search</button>
+
+                        </form>
+                        <form onSubmit={handleSubmit} className='search_form2'>
 
 
                             <input className='UP_in_box' placeholder='Enter Disease Name' type="text" value={Disease_Name} onChange={(e) => setDisease_Name(e.target.value)} />
@@ -58,4 +92,4 @@ const UpMedication = () => {
     );
 };
 
-export default UpMedication;
+export default UpdateMedication;

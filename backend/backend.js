@@ -109,7 +109,41 @@ app.post('/data', (req, res) => {
 
 })
 
-app.post("/updatemedication", (req, res) => {
+
+
+
+app.post('/search', (req, res) => {
+    const { Disease} = req.body;
+  
+    const sql = 'select * from medication WHERE `Disease_name`= ?';
+    const values = [Disease];
+   console.log(Disease);
+    db.query(sql, values, (err, data) => {
+        if (err) {
+            console.error('Error executing MySQL query:', err);
+            return res.json({ message: 'server error' });
+        }
+             if(data.length > 0){
+                console.log(data);
+                return res.json(data);
+
+
+             }else{
+
+                return res.json({ message: 'No data found' });
+
+             }
+
+
+
+  
+        
+    });
+
+
+})
+
+app.post("/insert", (req, res) => {
   const { Disease_Name, Medication_in_bangla, Medicine_name } = req.body;
 
   const sql = 'INSERT INTO `medication`(`Disease_name`, `Medication`, `Medicine_name`) VALUES (?, ?, ?)';
@@ -125,6 +159,23 @@ app.post("/updatemedication", (req, res) => {
   });
 });
 
+
+
+app.post("/updatemedication", (req, res) => {
+    const { Disease_Name, Medication_in_bangla, Medicine_name } = req.body;
+  
+    const sql = 'UPDATE `medication` SET `Medication`=?,`Medicine_name`=? WHERE `Disease_name`=?';
+    const values = [ Medication_in_bangla, Medicine_name,Disease_Name];
+  
+    db.query(sql, values, (err, result) => {
+        if (err) {
+            console.error('Error executing MySQL query:', err);
+            return res.status(500).json({ message: 'Failed to save data' });
+        }
+  
+        res.status(200).json({ message: 'Data Update successfully' });
+    });
+  });
 
 
 app.post("/signup", (req, res) => {

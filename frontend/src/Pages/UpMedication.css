@@ -75,3 +75,34 @@
     font-weight: bolder;
     color: black;
 }
+.search{
+
+   
+    height: 30px;
+    width: 73%;
+padding: 4px;
+    border-radius: 4px;
+    color: black;
+    margin-right: 4%;
+    font-size:20px;
+
+}
+
+.btn_search{
+
+    background-color: aqua;
+    padding: 3px;
+    color: rgb(17, 10, 1);
+    border-radius: 5px;
+}
+.search_form{
+margin-bottom: 20%;
+ 
+
+
+}
+.search_form2{
+
+margin-bottom: 35%;
+
+}
