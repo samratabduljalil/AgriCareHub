@@ -5,6 +5,7 @@ import Navbar from '../Component/Navbar'
 import Sidebar from '../Component/sidebar';
 import Footer from '../Component/Footer'
 import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const UserLogin = () => {
@@ -74,16 +75,17 @@ const UserLogin = () => {
           <Navbar/>
           
                     <div className="card_med_s">
-                        <h1 className='Up_title_s'>Login account</h1>
+                        <h1 className='Up_title_s'>এ্যাকাউন্টে প্রবেশ</h1>
                         <form onSubmit={handleSubmit}>
 
 
                            
 
-                            <input className='UP_in_box_s' type="text" value={Phone} onChange={(e) => setPhone(e.target.value)}  placeholder='Enter phone'/>
-                            <input className='UP_in_box_s' type="text" value={Password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter phone' />
+                            <input className='UP_in_box_s' type="text" value={Phone} onChange={(e) => setPhone(e.target.value)}  placeholder='আপনার মোবাইল নম্বর ইংরেজিতে লিখুন'/>
+                            <input className='UP_in_box_s' type="text" value={Password} onChange={(e) => setPassword(e.target.value)} placeholder='আপনার  পাসওয়ার্ড ইংরেজিতে লিখুন' />
                             <br></br>
-                            <button className='UP_btn_submit_s' type="submit">Login</button>
+                            <button className='UP_btn_submit_s' type="submit">প্রবেশ</button>
+                            <p>আপনার এ্যাকাউন্ট খোলা নেই?   <NavLink to="/UserSignup" className="text-green-700 text-2xl">খুলুন</NavLink></p>
                         </form>
                     </div>
                 </div>

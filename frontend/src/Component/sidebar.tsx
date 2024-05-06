@@ -29,7 +29,7 @@ const Sidebar = () => {
 
 
             <ul className='ul'>
-                <NavLink to="/"><li className='li'>Home</li></NavLink>
+                <NavLink to="/AdminDashboard"><li className='li'>Dashboard</li></NavLink>
                 <NavLink to="/UpMedication"><li className='li'>Insert Medication details</li></NavLink>
                 <NavLink to="/UpdateMedication"><li className='li'>Update Medication details</li></NavLink>
                 <NavLink to="/DeleteMedication"><li className='li'>Delete Medication Details</li></NavLink>

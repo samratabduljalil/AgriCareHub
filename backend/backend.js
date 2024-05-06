@@ -147,6 +147,17 @@ app.get('/', (req, res) => {
 
 
 })
+app.get('/district_data', (req, res) => {
+    const sql = "SELECT `District_Name`,`Disease_Name`, COUNT(*) AS count FROM `history` GROUP BY `District_Name`,`Disease_Name` ORDER BY count DESC";
+    
+    db.query(sql, (err, result) => {
+        console.log(result);
+        if (err) return res.json("server error c");
+        return res.json(result);
+    })
+
+
+})
 
 
 
@@ -370,10 +381,10 @@ app.post("/signup", (req, res) => {
         Password } = req.body;
 
     const sql = 'INSERT INTO `farmer`( `name`, `phone`, `password`, `district`)VALUES (?, ?, ?,?)';
-    const values = [Phone,
-        Name,
-        District,
-        Password];
+    const values = [ Name,Phone,
+        Password,
+        District
+        ];
 
     db.query(sql, values, (err, result) => {
         if (err) {

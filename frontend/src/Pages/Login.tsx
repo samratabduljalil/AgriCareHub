@@ -7,6 +7,7 @@ import { useEffect } from "react";
 
 
 
+
 const Login = () => {
     const [Phone, setPhone] = useState('');
     const [Password, setPassword] = useState('');
@@ -66,7 +67,7 @@ const Login = () => {
             <div className="card_container_med_s">
                 <div className="card_contain_med_s">
                     <div className="card_med_s">
-                        <h1 className='Up_title_s'>Create account</h1>
+                        <h1 className='Up_title_s'>LogIn account</h1>
                         <form onSubmit={handleSubmit}>
 
 
