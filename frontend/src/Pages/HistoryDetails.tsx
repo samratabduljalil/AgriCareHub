@@ -31,6 +31,7 @@ function HistoryDetails() {
                     setAuth(true);
                     setUser_id(res.data.user_id)
                     id = res.data.user_id
+                    console.log(diseaseName)
                     axios.post('http://localhost:2000/details', { diseaseName })
                         .then(res => {
 
@@ -60,10 +61,18 @@ function HistoryDetails() {
 
 
 
+    const [isPlaying, setIsPlaying] = useState(false);
 
 
-
-
+    const toggleAudio = () => {
+        setIsPlaying(!isPlaying);
+        const audio = document.getElementById('audio') as HTMLAudioElement;
+        if (isPlaying) {
+            audio.pause();
+        } else {
+            audio.play();
+        }
+    };
 
 
     return (<>
@@ -79,11 +88,15 @@ function HistoryDetails() {
 
 
                                 <tr key={index}>
-                                    <h1>{item.Disease_name}</h1>
-                                    <h1>{item.Medicine_name}</h1>
-                                    <p>{item.Medication}</p>
+                                    <h1>রোগের নাম:{item.Disease_name_bangla}</h1>
+                                    <h1>ঔষধের নাম:{item.Medicine_name}</h1>
+                                    <p>ব্যবহার বিধি:{item.Medication}</p>
 
 
+
+
+                                    <button className="btn_play" onClick={toggleAudio}>{isPlaying ? 'Pause' : 'Play'}</button>
+                                    <audio id="audio" src={'http://localhost:2000/' + item.audio_file} />
 
                                 </tr>
                             ))}

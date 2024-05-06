@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../Component/Footer'
 
-const Corn = () => {
+const Rice = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [PredictionResult, setPredictionResult] = useState('');
     const [data, setData] = useState('');
@@ -95,21 +95,22 @@ const Corn = () => {
 
                 <input type="file" id="fileInput" name="fileInput" accept=".jpg, .jpeg, .png" className='text-white rounded-sm' onChange={handleFileChange} />
                 <button className='btn_image_up' onClick={handleUpload}>Upload</button>
-                {data && (
+                {data && (<>
                     <div className='prompt_div'>
-                        <h3>Prediction:{data[0].audio_file}</h3>
-                        <p>Class: {data[0].Medication}</p>
-                        <p>Confidence: {PredictionResult}</p>
+                        <h3>রোগের নাম:{data[0].Disease_name_bangla}</h3>
+                        <h3>ঔষধের নাম: {data[0].Medicine_name}</h3>
+                        <p>ব্যবহার বিধি: {data[0].Medication}</p>
 
 
 
-                        <button className="btn_play" onClick={toggleAudio}>{isPlaying ? 'Pause' : 'Play'}</button>
-                        <audio id="audio" src={'http://localhost:2000/' + data[0].audio_file} />
 
 
                     </div>
+                    <button className="btn_play" onClick={toggleAudio}>{isPlaying ? 'Pause' : 'Play'}</button>
+                    <audio id="audio" src={'http://localhost:2000/' + data[0].audio_file} />
 
 
+                </>
 
 
                 )}
@@ -133,4 +134,4 @@ const Corn = () => {
     );
 };
 
-export default Corn;
+export default Rice;

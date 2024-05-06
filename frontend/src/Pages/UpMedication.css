@@ -62,8 +62,8 @@
 .UP_btn_submit {
 
     padding: 5px;
-    background-color: transparent;
-    color: black;
+    background-color: rgb(16, 11, 111);
+    color: white;
     border-radius: 5px;
     border: 2px solid black;
 
@@ -128,6 +128,12 @@
 
 .search_form2 {
 
-    margin-bottom: 25%;
+    margin-bottom: 15%;
+
+}
+
+textarea {
+    height: 20vh;
+    width: 70%;
 
 }

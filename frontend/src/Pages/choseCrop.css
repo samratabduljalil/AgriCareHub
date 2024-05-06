@@ -15,7 +15,7 @@
 
 .Crop_card {
   width: 70%;
-  height: 50vh;
+  height: 80vh;
   background: rgba(255, 255, 255, 0.001);
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -126,6 +126,7 @@
   border-radius: 7px;
   margin-top: 25px;
   color: black;
+  overflow-y: auto;
 
 }
 

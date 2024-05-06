@@ -97,9 +97,11 @@ const Corn = () => {
                 <button className='btn_image_up' onClick={handleUpload}>Upload</button>
                 {data && (
                     <div className='prompt_div'>
-                        <h3>Prediction:{data[0].audio_file}</h3>
-                        <p>Class: {data[0].Medication}</p>
-                        <p>Confidence: {PredictionResult}</p>
+                        <h3>রোগের নাম:{data[0].Disease_name_bangla}</h3>
+                        <h3>ঔষধের নাম: {data[0].Medicine_name}</h3>
+                        <p>ব্যবহার বিধি: {data[0].Medication}</p>
+
+
 
 
 

@@ -10,8 +10,8 @@
 
   font-size: x-large;
   font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 50%;
+
 
 
 
@@ -81,7 +81,7 @@
 
 
   background-color: rgb(113, 151, 113);
-  padding: 10px;
+  padding: 6px;
   border-radius: 10%;
 }
 
@@ -89,6 +89,6 @@
 
   transition: .25s;
   background-color: rgb(64, 129, 64);
-  padding: 11px;
+  padding: 7px;
   border-radius: 5%;
 }

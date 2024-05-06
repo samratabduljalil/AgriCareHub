@@ -265,9 +265,9 @@ app.post('/history', (req, res) => {
 app.post("/insert", upload.single('audio'), (req, res) => {
 
     const audioFilename = req.file.filename;
-    const sql = 'INSERT INTO `medication`(`Disease_name`, `Medication`, `Medicine_name`,`audio_file`) VALUES (?, ?, ?,?)';
-    const values = [req.body.Disease_Name, req.body.Medication_in_bangla, req.body.Medicine_name, audioFilename];
-
+    const sql = 'INSERT INTO `medication`(`Disease_name`, `Medication`, `Medicine_name`,`audio_file`,`Disease_name_bangla`) VALUES (?, ?, ?,?,?)';
+    const values = [req.body.Disease_Name, req.body.Medication_in_bangla, req.body.Medicine_name, audioFilename, req.body.Disease_Name_bangla];
+    console.log(req.body.Disease_Name_bangla)
     db.query(sql, values, (err, result) => {
         if (err) {
             console.error('Error executing MySQL query:', err);
@@ -307,7 +307,7 @@ app.post('/details', (req, res) => {
     const { diseaseName } = req.body;
     const sql = 'SELECT * FROM `medication` WHERE `Disease_name`= ?';
     const values = [diseaseName];
-
+    console.log(diseaseName)
     db.query(sql, values, (err, data) => {
         console.log(data)
         if (err) return res.json("server error historytable");
@@ -347,10 +347,10 @@ app.post('/delete', (req, res) => {
 
 
 app.post("/updatemedication", (req, res) => {
-    const { Disease_Name, Medication_in_bangla, Medicine_name } = req.body;
+    const { Disease_Name, Disease_Name_bangla, Medication_in_bangla, Medicine_name, } = req.body;
 
-    const sql = 'UPDATE `medication` SET `Medication`=?,`Medicine_name`=? WHERE `Disease_name`=?';
-    const values = [Medication_in_bangla, Medicine_name, Disease_Name];
+    const sql = 'UPDATE `medication` SET `Medication`=?,`Medicine_name`=?,`Disease_name_bangla`=? WHERE `Disease_name`=?';
+    const values = [Medication_in_bangla, Medicine_name, Disease_Name_bangla, Disease_Name];
 
     db.query(sql, values, (err, result) => {
         if (err) {

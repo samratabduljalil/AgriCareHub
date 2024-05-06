@@ -78,8 +78,8 @@ function UserDashboard() {
             <table className="data-table">
               <thead>
                 <tr>
-                  <th>History ID</th>
-                  <th>User ID</th>
+
+                  <th>User Id</th>
                   <th>District Name</th>
                   <th>Disease Name</th>
                   <th>Date</th>
@@ -89,7 +89,7 @@ function UserDashboard() {
               <tbody>
                 {Data.map((item, index) => (
                   <tr key={index}>
-                    <td>{item.History_ID}</td>
+
                     <td>{item.User_ID}</td>
                     <td>{item.District_Name}</td>
                     <td>{item.Disease_Name}</td>
