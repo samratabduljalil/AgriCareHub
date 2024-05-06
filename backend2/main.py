@@ -59,7 +59,7 @@ async def predict(
 ):
     MODEL = tf.keras.models.load_model("corn_model_inception_final.h5")
 
-    CLASS_NAMES = ["c","g", "h" , "n"]
+    CLASS_NAMES = ["Healthy","Leaf Blast", "Neck Blast"]
     image = read_file_as_image(await file.read())
     img_batch = np.expand_dims(image, 0)
     img_batch=img_batch/255
