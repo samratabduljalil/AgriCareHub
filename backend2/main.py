@@ -57,7 +57,7 @@ async def predict(
 async def predict(
     file: UploadFile = File(...)
 ):
-    MODEL = tf.keras.models.load_model("corn_model_inception_final.h5")
+    MODEL = tf.keras.models.load_model("rice_model_inception_final.h5")
 
     CLASS_NAMES = ["Healthy","Leaf Blast", "Neck Blast"]
     image = read_file_as_image(await file.read())

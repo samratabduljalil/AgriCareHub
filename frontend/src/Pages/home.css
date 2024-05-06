@@ -1,69 +1,71 @@
-
-
-
-.hero{
-display: flex;
-height: 100vh;
-align-items: center;
-justify-items: center;
-justify-content: center;
-background-color: #FEFBF6;
-background-image: url('/public/image/_3c059275-0cb8-4448-b051-237b94fa5441.jpg');
-background-repeat: no-repeat; 
-background-size: cover; 
-background-position: center;
+.hero {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  background-color: #FEFBF6;
+  background-image: url('/public/image/_3c059275-0cb8-4448-b051-237b94fa5441.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
+
 .card_h {
-  width: 70%;
-    height: 50vh;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    justify-items: center;
+  width: 60%;
+  height: 80vh;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
 
 }
-.btn_upload{
- padding: 9px;
- font-size: larger;
- background-color: green;
- border-radius: 7px;
 
- margin-top: 5px;
+.btn_upload {
+  padding: 9px;
+  font-size: larger;
+  background-color: green;
+  border-radius: 7px;
 
- margin-bottom: 35%;
+  margin-top: 5px;
 
-}
-.card_text{
-display: flex;
-text-align: center;
-justify-content: center;
-background-color: rgb(222, 224, 224);
-font-size: larger;
-
+  margin-bottom: 20%;
 
 }
-.home_image{
-height: 250px;
 
+.card_text {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: x-large;
 
 
 }
-.btn_upload:hover{
+
+.home_image {
+  height: 250px;
+
+
+
+}
+
+.btn_upload:hover {
   padding: 10px;
   font-size: larger;
   background-color: rgb(18, 142, 18);
 
- 
-  
- transition: .25s;
- 
- 
- }
+
+
+  transition: .25s;
+
+
+}

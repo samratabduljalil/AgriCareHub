@@ -1,120 +1,159 @@
-.Crop_body{
+.Crop_body {
 
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color:rgb(8, 12, 26);
-    background-image: url('/public/image/_3c059275-0cb8-4448-b051-237b94fa5441.jpg');
-background-repeat: no-repeat; 
-background-size: cover; 
-background-position: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(8, 12, 26);
+  background-image: url('/public/image/_3c059275-0cb8-4448-b051-237b94fa5441.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
+
 .Crop_card {
   width: 70%;
   height: 50vh;
-    background: rgba(255, 255, 255, 0.001);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    justify-items: center;
-  }
-  .chose_h1{
-color: rgb(223, 226, 229);
-font-size: x-large;
-font-weight: bolder;
-margin-bottom: 9%;
-background-color: #1B1A55;
-  }
-  .btn_rice{
-    color: aliceblue;
-    padding: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: brown;
-    border-radius: 5px;
-    top: 55%;
-    left: 7%;
+  background: rgba(255, 255, 255, 0.001);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+}
+
+.chose_h1 {
+  color: rgb(223, 226, 229);
+  font-size: x-large;
+  font-weight: bolder;
+  margin-bottom: 9%;
+  color: black;
+}
+
+.btn_rice {
+  color: aliceblue;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(244, 212, 7);
+  border-radius: 5px;
+  top: 55%;
+  left: 7%;
   position: absolute;
 
-  }
-  .btn_wheat{
-    color: aliceblue;
-    padding: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: brown;
-    border-radius: 5px;
-    top: 55%;
-    left: 30%;
+}
+
+.btn_rice:hover {
+
+  color: black;
+
+
+}
+
+.btn_wheat:hover {
+
+  color: black;
+
+
+}
+
+.btn_potato:hover {
+
+  color: black;
+
+
+}
+
+.btn_corn:hover {
+
+  color: black;
+
+
+
+}
+
+.btn_wheat {
+  color: aliceblue;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(7, 218, 234);
+  border-radius: 5px;
+  top: 55%;
+  left: 30%;
   position: absolute;
 
-  }
-  .btn_corn{
-    color: aliceblue;
-    padding: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: brown;
-    border-radius: 5px;
-    top: 55%;
-    left: 55%;
+}
+
+.btn_corn {
+  color: aliceblue;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: brown;
+  border-radius: 5px;
+  top: 55%;
+  left: 55%;
   position: absolute;
 
-  }
-  .btn_potato{
-    color: aliceblue;
-    padding: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: brown;
-    border-radius: 5px;
-    top: 55%;
-    left: 78%;
+}
+
+.btn_potato {
+  color: aliceblue;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(43, 18, 202);
+  border-radius: 5px;
+  top: 55%;
+  left: 78%;
   position: absolute;
 
-  }
-  .prompt_div{
-    background-color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    border-radius: 7px;
-    margin-top: 25px;
-    color: black;
-    
-  }
-  .btn_image_up{
-   background-color: green;
-   padding: 10px;
-   border-radius: 7px;
+}
+
+.prompt_div {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  margin-top: 25px;
+  color: black;
+
+}
+
+.btn_image_up {
+  background-color: green;
+  padding: 10px;
+  border-radius: 7px;
 
 
 
-  }
-  .btn_image_up:hover{
-    background-color: rgb(22, 150, 22);
-    padding: 11px;
-    border-radius: 2px;
-    transition: .25s;
- 
- 
-   }
-   .btn_play{
-    position: absolute;
-    top: 90%;
-    left: 90%;
-    border-radius: 20%;
-padding:1%;
- background-color: rgb(10, 154, 10);
+}
+
+.btn_image_up:hover {
+  background-color: rgb(22, 150, 22);
+  padding: 11px;
+  border-radius: 2px;
+  transition: .25s;
 
 
-   }
+}
+
+.btn_play {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+  border-radius: 20%;
+  padding: 1%;
+  background-color: rgb(10, 154, 10);
+
+
+}

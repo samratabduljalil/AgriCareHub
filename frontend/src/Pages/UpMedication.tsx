@@ -11,20 +11,20 @@ const UpMedication = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
-      };
+    };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {
             const formData = new FormData();
-      formData.append('audio', selectedFile);
-      formData.append('Disease_Name', Disease_Name);
-      formData.append('Medication_in_bangla', Medication_in_bangla);
-      formData.append('Medicine_name', Medicine_name);
+            formData.append('audio', selectedFile);
+            formData.append('Disease_Name', Disease_Name);
+            formData.append('Medication_in_bangla', Medication_in_bangla);
+            formData.append('Medicine_name', Medicine_name);
             const response = await axios.post('http://localhost:2000/insert', formData, {
                 headers: {
-                  'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data'
                 }
             });
 
@@ -58,8 +58,8 @@ const UpMedication = () => {
                             <input className='UP_in_box' placeholder='Enter Medicine name in bangla' type="text" value={Medicine_name} onChange={(e) => setMedicine_name(e.target.value)} />
                             <input type="file" onChange={handleFileChange} className='UP_in_box' />
                             <br></br>
-                            
-                            <button className='UP_btn_submit' type="submit">Submit</button>
+
+                            <button className='UP_btn_submit' type="submit">Insert</button>
                         </form>
                     </div>
                 </div>

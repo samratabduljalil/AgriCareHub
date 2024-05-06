@@ -4,7 +4,7 @@ import './UpMedication.css';
 import Sidebar from '../Component/sidebar';
 
 
-const UpdateMedication = () => {
+const DeleteMedication = () => {
     const [Disease_Name, setDisease_Name] = useState('');
     const [Medication_in_bangla, setMedication_in_bangla] = useState('');
     const [Medicine_name, setMedicine_name] = useState('');
@@ -41,17 +41,15 @@ const UpdateMedication = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:2000/updatemedication', {
-                Disease_Name,
-                Medication_in_bangla,
-                Medicine_name
+            const response = await axios.post('http://localhost:2000/delete', {
+                Disease_Name
             });
 
             console.log(response.data); // Handle successful submission
             setDisease_Name('');
             setMedication_in_bangla('');
             setMedicine_name('');
-            alert("Update Medication  Sucessefully")
+            alert("Delete Medication  Sucessefully")
 
         } catch (error) {
             console.error(error);
@@ -65,7 +63,7 @@ const UpdateMedication = () => {
             <div className="card_container_med">
                 <div className="card_contain_med">
                     <div className="card_med">
-                        <h1 className='Up_title'>Update Medicine details</h1>
+                        <h1 className='Up_title'>Delete Medicine details</h1>
                         <form className='search_form' onSubmit={handleSubmit2}>
 
                             <input value={Disease} onChange={(e) => setDisease(e.target.value)} className='search' type="search" name="" id="" placeholder='search' />
@@ -82,7 +80,7 @@ const UpdateMedication = () => {
                             <input className='UP_in_box' placeholder='Enter Medicine name in bangla' type="text" value={Medicine_name} onChange={(e) => setMedicine_name(e.target.value)} />
                             <br></br>
 
-                            <button className='UP_btn_submit' type="submit">Update</button>
+                            <button className='UP_btn_submit' type="submit">Delete</button>
                         </form>
                     </div>
                 </div>
@@ -92,4 +90,4 @@ const UpdateMedication = () => {
     );
 };
 
-export default UpdateMedication;
+export default DeleteMedication;

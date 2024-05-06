@@ -28,38 +28,39 @@
 }
 
 .li {
-    background-color: black;
-    border: 2px solid rgb(253, 251, 251);
+    background-color: rgb(29, 7, 76);
+    border: 1px solid rgb(0, 0, 0);
     padding: 1%;
     cursor: pointer;
 }
 
 .li:hover {
 
-    background-color: rgb(30, 28, 28);
+    background-color: rgb(127, 75, 239);
     padding: 2%;
 
 }
-.U_btn{
-padding: 5px;
-font-size: larger;
-border: 2px solid rgb(66, 64, 64);
-margin-bottom: 1px;
+
+.U_btn {
+    padding: 5px;
+    font-size: larger;
+    border: 2px solid rgb(66, 64, 64);
+    margin-bottom: 1px;
 
 }
 
-.U_btn:hover{
+.U_btn:hover {
     padding: 5px;
     cursor: pointer;
-   background-color:  rgb(25, 2, 74);
+    background-color: rgb(25, 2, 74);
     margin-bottom: 1px;
-    
-    }
+
+}
 
 
-.side_logo{
- font-size: larger;
- 
+.side_logo {
+    font-size: larger;
+
 
 
 }

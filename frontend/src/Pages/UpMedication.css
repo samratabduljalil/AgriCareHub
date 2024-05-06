@@ -9,7 +9,7 @@
     width: 80%;
     height: 100vh;
     display: flex;
-    background-color: brown;
+    background-color: rgb(240, 232, 232);
     justify-content: center;
     justify-items: center;
     align-items: center;
@@ -29,15 +29,22 @@
 
 .card_med {
 
-    background-color: red;
+    width: 600px;
     height: 500px;
-    width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
     justify-content: center;
     align-items: center;
+    text-align: center;
     justify-items: center;
-    border-radius: 5px;
-    flex-direction: column;
+    color: black;
+
 
 
 }
@@ -46,24 +53,27 @@
     margin: 2px;
     height: 30px;
     width: 70%;
-    margin-left: 15%;
+
     border-radius: 4px;
     color: black;
 
 }
 
 .UP_btn_submit {
-    margin-left: 45%;
+
     padding: 5px;
-    background-color: blanchedalmond;
+    background-color: transparent;
+    color: black;
     border-radius: 5px;
+    border: 2px solid black;
 
 }
 
 .UP_btn_submit:hover {
-    margin-left: 45%;
+
     padding: 6px;
-    background-color: blanchedalmond;
+    background-color: #1B1A55;
+    color: white;
     border-radius: 5px;
     transition: .55s;
 
@@ -75,34 +85,49 @@
     font-weight: bolder;
     color: black;
 }
-.search{
 
-   
+.search {
+
+
     height: 30px;
     width: 73%;
-padding: 4px;
+    padding: 4px;
     border-radius: 4px;
     color: black;
     margin-right: 4%;
-    font-size:20px;
+    font-size: 20px;
 
 }
 
-.btn_search{
+.btn_search {
 
-    background-color: aqua;
+    background: transparent;
     padding: 3px;
     color: rgb(17, 10, 1);
     border-radius: 5px;
+    border: 2px solid black;
 }
-.search_form{
-margin-bottom: 20%;
- 
+
+.btn_search:hover {
+
+
+    background-color: #1B1A55;
+    color: white;
+    padding: 4px;
+    transition: .25s;
+    border-radius: 4px;
+    border: 2px solid black;
+}
+
+.search_form {
+    margin-bottom: 10%;
+
 
 
 }
-.search_form2{
 
-margin-bottom: 35%;
+.search_form2 {
+
+    margin-bottom: 25%;
 
 }
