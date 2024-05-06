@@ -12,7 +12,7 @@
     width: 80%;
     height: 100vh;
     display: flex;
-    background-color: brown;
+    background-color: rgb(252, 252, 252);
     justify-content: center;
     
 
@@ -41,6 +41,39 @@
     align-items: center;
     text-align: center;
     justify-items: center;
+    color: black;
+    overflow-y: auto;
 
     
 }
+.data-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .data-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .data-table tr:hover {
+    background-color: #ddd;
+  }
+  .ta_btn{
+
+
+    background-color: rgb(113, 151, 113);
+    padding: 10px;
+    border-radius: 10%;
+  }
+  .ta_btn:hover{
+
+transition: .25s;
+    background-color: rgb(64, 129, 64);
+    padding: 11px;
+    border-radius: 5%;
+  }

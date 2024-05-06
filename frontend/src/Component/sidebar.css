@@ -1,5 +1,5 @@
 .sidebar {
-    background-color: aqua;
+    background-color: rgb(12, 1, 36);
     height: 100vh;
     width: 20%;
     color: white;
@@ -38,5 +38,28 @@
 
     background-color: rgb(30, 28, 28);
     padding: 2%;
+
+}
+.U_btn{
+padding: 5px;
+font-size: larger;
+border: 2px solid rgb(66, 64, 64);
+margin-bottom: 1px;
+
+}
+
+.U_btn:hover{
+    padding: 5px;
+    cursor: pointer;
+   background-color:  rgb(25, 2, 74);
+    margin-bottom: 1px;
+    
+    }
+
+
+.side_logo{
+ font-size: larger;
+ 
+
 
 }

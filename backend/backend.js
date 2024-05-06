@@ -131,7 +131,7 @@ const verifyUser2 =(req, res, next)=>{
     
     app.get('/AuthUser',verifyUser2,(req,res)=>{
     
-        return res.json({Status : "Success" ,admin_id: req.user_id})
+        return res.json({Status : "Success" ,user_id: req.user_id})
     
     }
     )
@@ -216,6 +216,52 @@ app.post('/search', (req, res) => {
 
 })
 
+
+app.post('/history', (req, res) => {
+    const { prediction,user_id} = req.body;
+  
+    const sql = 'select * from `farmer` WHERE `user_id`= ?';
+    const values = [user_id];
+   console.log(user_id);
+    db.query(sql, values, (err, data) => {
+        if (err) {
+            console.error('Error executing MySQL query:', err);
+            return res.json({ message: 'server error' });
+        }
+             if(data.length > 0){
+
+                const currentDate = new Date().toISOString().slice(0, 10);
+                const sql2 = 'INSERT INTO `history`( `User_ID`, `District_Name`, `Disease_Name`, `Date`) VALUES (?,?,?,?)';
+                const values2 = [user_id,data[0].district,prediction,currentDate];
+
+                db.query(sql2, values2, (err, result) => {
+                    if (err) {
+                        console.error('Error executing MySQL query:', err);
+                        return res.status(500).json({ message: 'Failed to save data' });
+                    }
+              
+                    res.status(200).json({ message: 'Data saved successfully' });
+                });
+
+                console.log(data);
+               
+
+
+             }else{
+
+                return res.json({ message: 'No data found' });
+
+             }
+
+
+
+  
+        
+    });
+
+
+})
+
 app.post("/insert", upload.single('audio'),(req, res) => {
   
   const audioFilename = req.file.filename;
@@ -231,6 +277,42 @@ app.post("/insert", upload.single('audio'),(req, res) => {
       res.status(200).json({ message: 'Data saved successfully' });
   });
 });
+
+
+
+
+
+
+
+
+
+
+app.post('/historytable', (req, res) => {
+    const { user_id} = req.body;
+    const sql = 'SELECT * FROM `history` WHERE `User_ID`= ?';
+    const values = [ user_id];
+    console.log(user_id)
+    db.query(sql,values, (err, data) => {
+           console.log(data)
+        if (err) return res.json("server error historytable");
+        
+        return res.json(data);
+    });
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

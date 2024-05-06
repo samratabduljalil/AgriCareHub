@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import './choseCrop.css';
 import Navbar from '../Component/Navbar'
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../Component/Footer'
 
 const Corn = () => {
@@ -10,7 +11,32 @@ const Corn = () => {
     const [PredictionResult, setPredictionResult] = useState('');
     const [data, setData] = useState('');
     const [isPlaying, setIsPlaying] = useState(false);
-
+    const [user_id,setUser_id]= useState('')
+    const [auth,setAuth]=useState(false)
+    const navigate =useNavigate();
+    axios.defaults.withCredentials = true;
+    
+    useEffect(()=>{
+    
+    axios.get('http://localhost:2000/AuthUser')
+    .then(res=>{
+    
+    if(res.data.Status==="Success"){
+     setAuth(true);
+     setUser_id(res.data.user_id)
+    
+    }else{
+        setAuth(false);
+        navigate('/UserLogin')
+    
+    }
+    
+    
+    
+    })
+    
+    
+    },[])
     const toggleAudio = () => {
       setIsPlaying(!isPlaying);
       const audio = document.getElementById('audio')as HTMLAudioElement;
@@ -46,7 +72,9 @@ const Corn = () => {
             setData(response2.data)
             console.log(response2.data);
 
-
+            const response3 = await axios.post('http://localhost:2000/history', {
+                prediction,user_id // Pass prediction to server
+            });
 
             
 
