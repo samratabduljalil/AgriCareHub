@@ -54,18 +54,19 @@ function Navbar() {
             {/* Navbar Items */}
             <div className="flex-grow text-center">
                 <ul className="flex justify-center space-x-4">
-                    <li><NavLink to="/" className="nav_btn">Home</NavLink></li>
-                    <li><NavLink to="/" className="nav_btn" >About</NavLink></li>
-                    <li><NavLink to="/" className="nav_btn">Service</NavLink></li>
+                    <li><NavLink to="/" className="nav_btn">হোম
+                    </NavLink></li>
+                    <li><NavLink to="/" className="nav_btn" >সম্পর্কিত</NavLink></li>
+                    <li><NavLink to="/" className="nav_btn">সেবা</NavLink></li>
                     {
                         auth ?
                             <div>
-                                <li> <li><NavLink to="/UserDashboard" className="nav_btn">Dashboard</NavLink></li>
+                                <li> <li><NavLink to="/UserDashboard" className="nav_btn">ড্যাশবোর্ড</NavLink></li>
                                 </li>
                             </div>
                             :
                             <div>
-                                <NavLink to="/UserSignup" className="nav_btn">Signup</NavLink>
+                                <NavLink to="/UserSignup" className="nav_btn">নিবন্ধন করুন</NavLink>
                             </div>
 
 

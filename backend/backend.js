@@ -149,7 +149,7 @@ app.get('/', (req, res) => {
 })
 app.get('/district_data', (req, res) => {
     const sql = "SELECT `District_Name`,`Disease_Name`, COUNT(*) AS count FROM `history` GROUP BY `District_Name`,`Disease_Name` ORDER BY count DESC";
-    
+
     db.query(sql, (err, result) => {
         console.log(result);
         if (err) return res.json("server error c");
@@ -273,21 +273,7 @@ app.post('/history', (req, res) => {
 
 })
 
-app.post("/insert", upload.single('audio'), (req, res) => {
 
-    const audioFilename = req.file.filename;
-    const sql = 'INSERT INTO `medication`(`Disease_name`, `Medication`, `Medicine_name`,`audio_file`,`Disease_name_bangla`) VALUES (?, ?, ?,?,?)';
-    const values = [req.body.Disease_Name, req.body.Medication_in_bangla, req.body.Medicine_name, audioFilename, req.body.Disease_Name_bangla];
-    console.log(req.body.Disease_Name_bangla)
-    db.query(sql, values, (err, result) => {
-        if (err) {
-            console.error('Error executing MySQL query:', err);
-            return res.status(500).json({ message: 'Failed to save data' });
-        }
-
-        res.status(200).json({ message: 'Data saved successfully' });
-    });
-});
 
 
 
@@ -352,25 +338,58 @@ app.post('/delete', (req, res) => {
 
 
 
+app.post("/insert", upload.single('audio'), (req, res) => {
 
-
-
-
-
-app.post("/updatemedication", (req, res) => {
-    const { Disease_Name, Disease_Name_bangla, Medication_in_bangla, Medicine_name, } = req.body;
-
-    const sql = 'UPDATE `medication` SET `Medication`=?,`Medicine_name`=?,`Disease_name_bangla`=? WHERE `Disease_name`=?';
-    const values = [Medication_in_bangla, Medicine_name, Disease_Name_bangla, Disease_Name];
-
+    const audioFilename = req.file.filename;
+    const sql = 'INSERT INTO `medication`(`Disease_name`, `Medication`, `Medicine_name`,`audio_file`,`Disease_name_bangla`) VALUES (?, ?, ?,?,?)';
+    const values = [req.body.Disease_Name, req.body.Medication_in_bangla, req.body.Medicine_name, audioFilename, req.body.Disease_Name_bangla];
+    console.log(req.body.Disease_Name_bangla)
     db.query(sql, values, (err, result) => {
         if (err) {
             console.error('Error executing MySQL query:', err);
             return res.status(500).json({ message: 'Failed to save data' });
         }
 
-        res.status(200).json({ message: 'Data Update successfully' });
+        res.status(200).json({ message: 'Data saved successfully' });
     });
+});
+
+
+
+
+app.post("/updatemedication", upload.single('audio'), (req, res) => {
+    const { Disease_Name, Disease_Name_bangla, Medication_in_bangla, Medicine_name, } = req.body;
+
+    if (req.file) {
+
+        const sql = 'UPDATE `medication` SET `Medication`=?,`Medicine_name`=?,`Disease_name_bangla`=?,`audio_file`=? WHERE `Disease_name`=?';
+        const values = [Medication_in_bangla, Medicine_name, Disease_Name_bangla, req.file.filename, Disease_Name];
+
+        db.query(sql, values, (err, result) => {
+            if (err) {
+                console.error('Error executing MySQL query:', err);
+                return res.status(500).json({ message: 'Failed to save data' });
+            }
+
+            res.status(200).json({ message: 'Data Update successfully' });
+        });
+    } else {
+
+
+        const sql = 'UPDATE `medication` SET `Medication`=?,`Medicine_name`=?,`Disease_name_bangla`=? WHERE `Disease_name`=?';
+        const values = [Medication_in_bangla, Medicine_name, Disease_Name_bangla, Disease_Name];
+        db.query(sql, values, (err, result) => {
+            if (err) {
+                console.error('Error executing MySQL query:', err);
+                return res.status(500).json({ message: 'Failed to save data' });
+            }
+
+            res.status(200).json({ message: 'Data Update successfully' });
+        });
+    }
+
+
+
 });
 
 
@@ -381,10 +400,10 @@ app.post("/signup", (req, res) => {
         Password } = req.body;
 
     const sql = 'INSERT INTO `farmer`( `name`, `phone`, `password`, `district`)VALUES (?, ?, ?,?)';
-    const values = [ Name,Phone,
+    const values = [Name, Phone,
         Password,
         District
-        ];
+    ];
 
     db.query(sql, values, (err, result) => {
         if (err) {

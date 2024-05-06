@@ -10,6 +10,10 @@ const UpdateMedication = () => {
     const [Medication_in_bangla, setMedication_in_bangla] = useState('');
     const [Medicine_name, setMedicine_name] = useState('');
     const [Disease, setDisease] = useState('');
+    const [selectedFile, setSelectedFile] = useState(null);
+    const handleFileChange = (event) => {
+        setSelectedFile(event.target.files[0]);
+    };
 
 
 
@@ -24,6 +28,7 @@ const UpdateMedication = () => {
 
             console.log(response.data); // Handle successful submission
             setDisease_Name(response.data[0].Disease_name);
+            setDisease_Name_bangla(response.data[0].Disease_name_bangla);
             setMedication_in_bangla(response.data[0].Medication);
             setMedicine_name(response.data[0].Medicine_name);
 
@@ -42,12 +47,18 @@ const UpdateMedication = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:2000/updatemedication', {
-                Disease_Name,
-                Disease_Name_bangla,
-                Medication_in_bangla,
-                Medicine_name
+            const formData = new FormData();
+            formData.append('audio', selectedFile);
+            formData.append('Disease_Name', Disease_Name);
+            formData.append('Disease_Name_bangla', Disease_Name_bangla);
+            formData.append('Medication_in_bangla', Medication_in_bangla);
+            formData.append('Medicine_name', Medicine_name);
+            const response = await axios.post('http://localhost:2000/updatemedication', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
             });
+
 
             console.log(response.data); // Handle successful submission
             setDisease_Name_bangla('');
@@ -83,6 +94,7 @@ const UpdateMedication = () => {
                             <textarea className='textarea' placeholder='Enter Medication in bangla' type="text" value={Medication_in_bangla} onChange={(e) => setMedication_in_bangla(e.target.value)} />
 
                             <input className='UP_in_box' placeholder='Enter Medicine name in bangla' type="text" value={Medicine_name} onChange={(e) => setMedicine_name(e.target.value)} />
+                            <input type="file" onChange={handleFileChange} className='UP_in_box' />
                             <br></br>
 
                             <button className='UP_btn_submit' type="submit">Update</button>

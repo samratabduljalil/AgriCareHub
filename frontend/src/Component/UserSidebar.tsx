@@ -27,11 +27,11 @@ function UserSidebar() {
             <h2 className='side_logo'>AgriCareHub</h2>
 
             <ul className='ul'>
-                <li className='U_btn'><NavLink to="/" >Home</NavLink></li>
+                <li className='U_btn'><NavLink to="/UserDashboard" >ড্যাশবোর্ড</NavLink></li>
 
-                <NavLink to="/ChoseCrop" ><li className='U_btn'>Upload</li></NavLink>
+                <NavLink to="/ChoseCrop" ><li className='U_btn'>রোগ নির্ণয়</li></NavLink>
 
-                <li className='U_btn' onClick={logout}><NavLink to="/" >Logout </NavLink></li>
+                <li className='U_btn' onClick={logout}><NavLink to="/" >লগআউট </NavLink></li>
 
 
             </ul>

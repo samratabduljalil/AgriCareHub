@@ -74,16 +74,16 @@ function UserDashboard() {
 
           <div className="User_card">
 
-            <h1 className='h_table'>your plant disease history </h1>
+            <h1 className='h_table'>উদ্ভিদের রোগের ইতিহাস </h1>
             <table className="data-table">
               <thead>
                 <tr>
 
                   <th>User Id</th>
-                  <th>District Name</th>
-                  <th>Disease Name</th>
-                  <th>Date</th>
-                  <th>Actions</th> {/* Add a column for actions */}
+                  <th>জেলা</th>
+                  <th>রোগের নাম</th>
+                  <th>তারিখ</th>
+                  <th>ক্রিয়াকলাপ</th> {/* Add a column for actions */}
                 </tr>
               </thead>
               <tbody>
@@ -95,7 +95,7 @@ function UserDashboard() {
                     <td>{item.Disease_Name}</td>
                     <td>{item.Date}</td>
                     <td>
-                      <NavLink to={`/HistoryDetails/${item.Disease_Name}`} className="ta_btn">Details</NavLink>
+                      <NavLink to={`/HistoryDetails/${item.Disease_Name}`} className="ta_btn">বিস্তারিত</NavLink>
                     </td>
                   </tr>
                 ))}

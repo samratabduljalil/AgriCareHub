@@ -81,11 +81,11 @@
 }
 
 .btn_wheat {
-  color: aliceblue;
+  color: black;
   padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: rgb(7, 218, 234);
+  background-color: rgb(155, 234, 7);
   border-radius: 5px;
   top: 55%;
   left: 30%;
