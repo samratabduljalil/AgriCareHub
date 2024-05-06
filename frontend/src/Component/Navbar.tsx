@@ -55,8 +55,8 @@ function Navbar() {
             <div className="flex-grow text-center">
                 <ul className="flex justify-center space-x-4">
                     <li><NavLink to="/" className="nav_btn">Home</NavLink></li>
-                    <li><NavLink to="/about" className="nav_btn" >About</NavLink></li>
-                    <li><NavLink to="/UserSignup" className="nav_btn">Service</NavLink></li>
+                    <li><NavLink to="/" className="nav_btn" >About</NavLink></li>
+                    <li><NavLink to="/" className="nav_btn">Service</NavLink></li>
                     {
                         auth ?
                             <div>
@@ -65,7 +65,7 @@ function Navbar() {
                             </div>
                             :
                             <div>
-                                <NavLink to="/services" className="nav_btn">Services</NavLink>
+                                <NavLink to="/UserSignup" className="nav_btn">Signup</NavLink>
                             </div>
 
 

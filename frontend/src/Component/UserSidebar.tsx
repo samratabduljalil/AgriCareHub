@@ -27,7 +27,7 @@ function UserSidebar() {
             <h2 className='side_logo'>AgriCareHub</h2>
 
             <ul className='ul'>
-                <li className='U_btn'>Home</li>
+                <li className='U_btn'><NavLink to="/" >Home</NavLink></li>
 
                 <NavLink to="/ChoseCrop" ><li className='U_btn'>Upload</li></NavLink>
 

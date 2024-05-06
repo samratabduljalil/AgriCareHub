@@ -19,6 +19,8 @@ import Rice from './Pages/Rice'
 import Potato from './Pages/Potato'
 import Corn from './Pages/Corn'
 import UpdateMedication from './Pages/UpdateMedication'
+import HistoryDetails from './Pages/HistoryDetails'
+import DeleteMedication from './Pages/DeleteMedication'
 
 function App() {
 
@@ -47,9 +49,12 @@ function App() {
           <Route path="/Rice" element={<Rice />} />
           <Route path="/Potato" element={<Potato />} />
           <Route path="/Corn" element={<Corn />} />
+          <Route path="/HistoryDetails/:diseaseName" element={<HistoryDetails />} />
           <Route path="/UpdateMedication" element={<UpdateMedication />} />
+          <Route path="/DeleteMedication" element={<DeleteMedication />} />
         </Routes>
       </Router>
+
     </>
   )
 }

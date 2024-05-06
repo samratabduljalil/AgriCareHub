@@ -303,6 +303,36 @@ app.post('/historytable', (req, res) => {
 });
 
 
+app.post('/details', (req, res) => {
+    const { diseaseName } = req.body;
+    const sql = 'SELECT * FROM `medication` WHERE `Disease_name`= ?';
+    const values = [diseaseName];
+
+    db.query(sql, values, (err, data) => {
+        console.log(data)
+        if (err) return res.json("server error historytable");
+
+        return res.json(data);
+    });
+
+
+});
+
+
+app.post('/delete', (req, res) => {
+    const { Disease_Name } = req.body;
+    const sql = 'DELETE FROM `medication` WHERE `Disease_name`= ?';
+    const values = [Disease_Name];
+
+    db.query(sql, values, (err, data) => {
+        console.log(data)
+        if (err) return res.json("server error historytable");
+
+        return res.json(data);
+    });
+
+
+});
 
 
 

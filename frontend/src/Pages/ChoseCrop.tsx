@@ -1,9 +1,39 @@
 import './choseCrop.css';
 import Navbar from '../Component/Navbar'
-import { NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import Footer from '../Component/Footer'
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 
 function ChoseCrop() {
+
+
+
+    const [auth, setAuth] = useState(false)
+    const navigate = useNavigate();
+    axios.defaults.withCredentials = true;
+
+    useEffect(() => {
+
+        axios.get('http://localhost:2000/AuthUser')
+            .then(res => {
+
+                if (res.data.Status === "Success") {
+                    setAuth(true);
+
+
+                } else {
+
+                    navigate('/UserLogin')
+                }
+
+
+
+            })
+
+
+    }, [])
 
     return (<>
         <Navbar />

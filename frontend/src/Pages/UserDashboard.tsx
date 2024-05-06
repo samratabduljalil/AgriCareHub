@@ -12,7 +12,7 @@ function UserDashboard() {
 
   const navigate = useNavigate();
   const [auth, setAuth] = useState(false)
-  const [user_id, setUser_id] = useState('')
+  const [user_id, setUser_id] = useState(null)
   const [Data, setData] = useState([])
 
   axios.defaults.withCredentials = true;
@@ -29,6 +29,17 @@ function UserDashboard() {
           setAuth(true);
           setUser_id(res.data.user_id)
           id = res.data.user_id
+
+          axios.post('http://localhost:2000/historytable', { user_id: id })
+            .then(res => {
+
+              setData(res.data)
+              console.log(res.data)
+
+
+            })
+
+
         } else {
           setAuth(false);
           navigate('/UserLogin')
@@ -42,21 +53,7 @@ function UserDashboard() {
 
   }, [])
 
-  useEffect(() => {
-    console.log(user_id)
-    axios.post('http://localhost:2000/historytable', { user_id: 1 })
-      .then(res => {
 
-        setData(res.data)
-        console.log(res.data)
-
-
-
-
-      })
-
-
-  }, [])
 
 
 
@@ -98,7 +95,7 @@ function UserDashboard() {
                     <td>{item.Disease_Name}</td>
                     <td>{item.Date}</td>
                     <td>
-                      <NavLink to={`/details/${item.Disease_Name}`} className="ta_btn">Details</NavLink>
+                      <NavLink to={`/HistoryDetails/${item.Disease_Name}`} className="ta_btn">Details</NavLink>
                     </td>
                   </tr>
                 ))}
