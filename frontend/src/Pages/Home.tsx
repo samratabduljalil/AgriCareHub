@@ -1,14 +1,50 @@
 import './home.css';
-import {NavLink} from 'react-router-dom';
-import { useState ,useEffect} from 'react'
+import { NavLink } from 'react-router-dom';
+
 import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer'
 import Modal from '../Component/Modal'
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 type TawkAPIType = {
   [key: string]: any;
 };
-function Home (){
+
+
+
+function Home() {
+
+  const [auth, setAuth] = useState(false)
+
+  axios.defaults.withCredentials = true;
+
+  useEffect(() => {
+
+    axios.get('http://localhost:2000/AuthUser')
+      .then(res => {
+
+        if (res.data.Status === "Success") {
+          setAuth(true);
+
+
+        } else {
+          setAuth(false);
+
+        }
+
+
+
+      })
+
+
+  }, [])
+
+
+
+
+
+
   useEffect(() => {
     // This code will run when the component mounts
     var Tawk_API: TawkAPIType = (window as any).Tawk_API || {};
@@ -24,36 +60,55 @@ function Home (){
     })();
   }, []);
 
-const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
-return (
-  <>
+  return (
+    <>
 
-    <Navbar></Navbar>
-    
-    <div className="hero">
+      <Navbar></Navbar>
 
-   <div className="card_h">
-    <img src="\public\image\_14cdbdd2-955a-4e74-a067-18387740e6d1.png" alt="" className='home_image' />
-    <p className='card_text'>আপনার ফসলের রোগ নির্ণয় করতে চাইলে বোতামে চাপ দিন।  কিভাবে করবেন জানতে চাইলে বোতামে চাপ দিন।</p>
-   <button onClick={()=>setShowModal(true)} className="btn_upload">ছবি নির্বাচন করুন</button>
-    
-    
+      <div className="hero">
 
-   </div>
-     
-    
-    
-    </div>
+        <div className="card_h">
+          <img src="\public\image\_14cdbdd2-955a-4e74-a067-18387740e6d1.png" alt="" className='home_image' />
+          <p className='card_text'>আপনার ফসলের রোগ নির্ণয় করতে চাইলে বোতামে চাপ দিন।  কিভাবে করবেন জানতে চাইলে বোতামে চাপ দিন।</p>
+          {
 
-    
-    <Footer></Footer>
-    {showModal && <Modal onClose={() => setShowModal(false)} />}
+            auth ?
+              <div>
+                <NavLink to="/ChoseCrop" ><button className="btn_upload">ছবি নির্বাচন করুন</button></NavLink>
 
-    
-  </>
-)
-    
-    
-    }
+              </div>
+
+              :
+              <div>
+                <button onClick={() => setShowModal(true)} className="btn_upload">ছবি নির্বাচন করুন</button>
+              </div>
+
+          }
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+      <Footer></Footer>
+      {showModal && !auth && <Modal onClose={() => setShowModal(false)} />}
+
+
+    </>
+  )
+
+
+}
 export default Home

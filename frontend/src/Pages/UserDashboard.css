@@ -1,79 +1,94 @@
-.body_user{
+.body_user {
 
-    display: flex;
-    color: white;
+  display: flex;
+  color: white;
+
+
+}
+
+.h_table {
+
+  font-size: x-large;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
 
 
 }
 
+.user_container {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  background-color: rgb(252, 252, 252);
+  justify-content: center;
 
-
-.user_container{
-    width: 80%;
-    height: 100vh;
-    display: flex;
-    background-color: rgb(252, 252, 252);
-    justify-content: center;
-    
 
 
 }
-.user_contain{
 
-    margin-top:8% ;
-    display: grid;
-    gap: 1%;
-    grid-template-columns: 1fr;
-    
-}
-.User_card{
-    width: 600px;
-    height: 350px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    justify-items: center;
-    color: black;
-    overflow-y: auto;
+.user_contain {
 
-    
+  margin-top: 8%;
+  display: grid;
+  gap: 1%;
+  grid-template-columns: 1fr;
+
 }
+
+.User_card {
+  width: 650px;
+  height: 550px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+  color: black;
+  overflow-y: auto;
+
+
+}
+
 .data-table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  .data-table th, .data-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  .data-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .data-table tr:hover {
-    background-color: #ddd;
-  }
-  .ta_btn{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.data-table tr:hover {
+  background-color: #ddd;
+}
+
+.ta_btn {
 
 
-    background-color: rgb(113, 151, 113);
-    padding: 10px;
-    border-radius: 10%;
-  }
-  .ta_btn:hover{
+  background-color: rgb(113, 151, 113);
+  padding: 10px;
+  border-radius: 10%;
+}
 
-transition: .25s;
-    background-color: rgb(64, 129, 64);
-    padding: 11px;
-    border-radius: 5%;
-  }
+.ta_btn:hover {
+
+  transition: .25s;
+  background-color: rgb(64, 129, 64);
+  padding: 11px;
+  border-radius: 5%;
+}
