@@ -56,6 +56,7 @@ const Signup = () => {
                             <input className='UP_in_box_s' type="text" value={Password} onChange={(e) => setPassword(e.target.value)} />
                             <br></br>
                             <button className='UP_btn_submit_s' type="submit">Submit</button>
+                            <p></p>
                         </form>
                     </div>
                 </div>

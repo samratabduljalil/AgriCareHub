@@ -47,6 +47,9 @@ const Corn = () => {
             console.log(response2.data);
 
 
+
+            
+
         } catch (error) {
             console.error('Error uploading image:', error);
         }

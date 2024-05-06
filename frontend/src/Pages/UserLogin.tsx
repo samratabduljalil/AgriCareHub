@@ -1,7 +1,9 @@
 import React, { useState ,useEffect } from 'react';
 import axios from 'axios';
 import './Signup.css';
+import Navbar from '../Component/Navbar'
 import Sidebar from '../Component/sidebar';
+import Footer from '../Component/Footer'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -69,25 +71,23 @@ const UserLogin = () => {
 
     return (<>
         <div className="main_med_s">
+          <Navbar/>
           
-            <div className="card_container_med_s">
-                <div className="card_contain_med_s">
                     <div className="card_med_s">
-                        <h1 className='Up_title_s'>Create account</h1>
+                        <h1 className='Up_title_s'>Login account</h1>
                         <form onSubmit={handleSubmit}>
 
 
                            
 
-                            <input className='UP_in_box_s' type="text" value={Phone} onChange={(e) => setPhone(e.target.value)} />
-                            <input className='UP_in_box_s' type="text" value={Password} onChange={(e) => setPassword(e.target.value)} />
+                            <input className='UP_in_box_s' type="text" value={Phone} onChange={(e) => setPhone(e.target.value)}  placeholder='Enter phone'/>
+                            <input className='UP_in_box_s' type="text" value={Password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter phone' />
                             <br></br>
                             <button className='UP_btn_submit_s' type="submit">Login</button>
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
+            <Footer/>
     </>
     );
 };

@@ -23,7 +23,7 @@ function UserDashboard(){
    
    if(res.data.Status==="Success"){
     setAuth(true);
-    setUser_id(res.data.admin_id)
+    setUser_id(res.data.user_id)
    
    }else{
        setAuth(false);
