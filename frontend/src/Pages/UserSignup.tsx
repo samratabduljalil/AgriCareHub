@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Signup.css';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-
+import Navbar from '../Component/Navbar'
 const UserSignup = () => {
     const [Phone, setPhone] = useState('');
     const [Name, setName] = useState('');
@@ -62,7 +62,7 @@ const UserSignup = () => {
 
     return (<>
         <div className="main_med_s">
-
+            <Navbar />
             <div className="card_container_med_s">
                 <div className="card_contain_med_s">
                     <div className="card_med_s">

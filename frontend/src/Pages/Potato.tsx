@@ -89,12 +89,12 @@ const Corn = () => {
 
             <div className="Crop_card">
 
-                <h1 className='chose_h1'>আপনার রোগাক্রান্ত ফসলের রোগ নির্ণয়ের জন্য সাদা রঙের বোতামে চাপ দিয়ে ছবি পছন্দ করুন তারপর নির্নয় লিখা বোতামে চাপ দিন। </h1>
+                <h1 className='chose_h1'>আপনার রোগাক্রান্ত ফসলের রোগ নির্ণয়ের জন্য সাদা রঙের বোতামে চাপ দিয়ে ছবি পছন্দ করুন তারপর রোগ নির্ণয় লিখা বোতামে চাপ দিন। </h1>
 
 
 
                 <input type="file" id="fileInput" name="fileInput" accept=".jpg, .jpeg, .png" className='text-white rounded-sm' onChange={handleFileChange} />
-                <button className='btn_image_up' onClick={handleUpload}>Upload</button>
+                <button className='btn_image_up' onClick={handleUpload}>রোগ নির্ণয়</button>
                 {data && (
                     <div className='prompt_div'>
                         <h3>রোগের নাম:{data[0].Disease_name_bangla}</h3>
