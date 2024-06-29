@@ -29,7 +29,9 @@
 
 
   <h2>Snapshots of Our AI webapps</h2>
+  
 ![Screenshot (20)](https://github.com/samratabduljalil/AgriCareHub/assets/95965521/67a57dfb-949a-4384-acf5-ac817a9bf72e)
+
 
 ![Screenshot (22)](https://github.com/samratabduljalil/AgriCareHub/assets/95965521/9e362370-a476-404d-bb01-6d8355d34201)
 
