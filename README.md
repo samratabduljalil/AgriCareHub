@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agricarehub: Crop Disease Classification and Treatment Website</title>
-  <style>
-    /* Add basic styling for readability (optional) */
-    body {
-      font-family: sans-serif;
-      margin: 1rem;
-    }
-    h1, h2, h3 {
-      margin-bottom: 0.5rem;
-    }
-    p {
-      margin-bottom: 1rem;
-    }
-  </style>
-</head>
-<body>
+
   <h1>Agricarehub: Crop Disease Classification and Treatment Website</h1>
 
   <p>Agricarehub is a web application designed to empower farmers with the ability to diagnose crop diseases for potato, corn, rice, and wheat, and receive targeted treatment recommendations.  The user interface is entirely in Bengali to ensure accessibility for farmers in Bangladesh.</p>
@@ -47,6 +27,7 @@
     <li>Styling: CSS, Tailwind CSS</li>
   </ul>
 
-  
-</body>
-</html>
+
+
+
+
