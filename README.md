@@ -35,5 +35,8 @@
 
 ![Screenshot (22)](https://github.com/samratabduljalil/AgriCareHub/assets/95965521/9e362370-a476-404d-bb01-6d8355d34201)
 
+![Screenshot (12)](https://github.com/samratabduljalil/AgriCareHub/assets/95965521/19b77671-b6a9-4985-8044-37ded6f39342)
+
+
 ![Screenshot (17)](https://github.com/samratabduljalil/AgriCareHub/assets/95965521/228abcf7-2921-48c9-84a7-cf8a81439d40)
 ![Screenshot (21)](https://github.com/samratabduljalil/AgriCareHub/assets/95965521/d9509c8e-3d2e-4e56-8cb1-3460fb8c6f39)
