@@ -1,7 +1,7 @@
 
   <h1>Agricarehub: Crop Disease Classification and Treatment Website</h1>
 
-  <p>Agricarehub is a web application designed to empower farmers with the ability to diagnose crop diseases for potato, corn, rice, and wheat, and receive targeted treatment recommendations.  The user interface is entirely in Bengali to ensure accessibility for farmers in Bangladesh.</p>
+  <p>Agricarehub is an AI-powered web application aimed at empowering farmers by enabling them to diagnose crop diseases for potato, corn, rice, and wheat, and receive personalized treatment recommendations. The entire user interface is in Bengali, ensuring accessibility for farmers in Bangladesh.</p>
 
   <h2>Features</h2>
 
@@ -28,6 +28,10 @@
   </ul>
 
 
+  <h2>Snapshots of Our AI webapps</h2>
+![Screenshot (20)](https://github.com/samratabduljalil/AgriCareHub/assets/95965521/67a57dfb-949a-4384-acf5-ac817a9bf72e)
 
+![Screenshot (22)](https://github.com/samratabduljalil/AgriCareHub/assets/95965521/9e362370-a476-404d-bb01-6d8355d34201)
 
-
+![Screenshot (17)](https://github.com/samratabduljalil/AgriCareHub/assets/95965521/228abcf7-2921-48c9-84a7-cf8a81439d40)
+![Screenshot (21)](https://github.com/samratabduljalil/AgriCareHub/assets/95965521/d9509c8e-3d2e-4e56-8cb1-3460fb8c6f39)
