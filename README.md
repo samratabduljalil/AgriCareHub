@@ -6,7 +6,7 @@
   <h2>Features</h2>
 
   <ul>
-    <li>**Crop Disease Classification:** Farmers can upload images of their crops to receive AI-powered disease detection.</li>
+    <li>**Crop Disease Classification:** Farmers can upload images of their crops to receive AI-powered disease classification.</li>
     <li>**Treatment Recommendations:** Based on the diagnosed disease, Agricarehub provides localized treatment suggestions in Bengali.</li>
     <li>**Audio Medication Instructions:** Farmers can listen to audio recordings of treatment instructions in Bengali for enhanced clarity.</li>
     <li>**Disease History Tracking:** Farmers can maintain a history of disease occurrences on their farms for better disease management.</li>
