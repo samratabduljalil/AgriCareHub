@@ -1,5 +1,5 @@
 
-  <h1>Agricarehub: Crop Disease Classification and Treatment Website</h1>
+  <h1>CropCare: Crop Disease Classification and Treatment Website</h1>
 
   <p>Agricarehub is an AI-powered web application aimed at empowering farmers by enabling them to diagnose crop diseases for potato, corn, rice, and wheat, and receive personalized treatment recommendations. The entire user interface is in Bengali, ensuring accessibility for farmers in Bangladesh.</p>
 
